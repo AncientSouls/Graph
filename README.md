@@ -1,5 +1,7 @@
 # Graph
 
+Graph methods and event handlers based on adapter.
+
 ## License
 
 The MIT License (MIT)
