@@ -34,25 +34,25 @@ export { Graph };
  * To find an empty value, you need to specify as value undefined.
  * Not specified keys will not participate in the search. 
  *
- * @interface Link
+ * @interface LinkSelector
  */
 
 /**
  * Unique id of link in this graph.
  *
- * @name Link#id
+ * @name LinkSelector#id
  */
 
 /**
  * Some reference to source.
  *
- * @name Link#source
+ * @name LinkSelector#source
  */
 
 /**
  * Some reference to target.
  *
- * @name Link#target
+ * @name LinkSelector#target
  */
 
 /**
@@ -61,25 +61,19 @@ export { Graph };
  * To delete some value, just specify it value as undefined.
  * Not specified keys will not participate in the links modification.
  *
- * @interface Link
- */
-
-/**
- * Unique id of link in this graph. Can not be modified!
- *
- * @name Link#id
+ * @interface LinkModifier
  */
 
 /**
  * Some reference to source.
  *
- * @name Link#source
+ * @name LinkModifier#source
  */
 
 /**
  * Some reference to target.
  *
- * @name Link#target
+ * @name LinkModifier#target
  */
 
 /**
