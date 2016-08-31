@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>index.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,34 +28,123 @@
 
 <div id="main">
     
+    <h1 class="page-title">index.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Graph } from './graph.js';
 
+export { Graph };
 
+/**
+ * Interface for link state representation.
+ * Valid any keys and values, if adaptation methods was able to work with them.
+ *
+ * @interface Link
+ */
 
+/**
+ * Unique id of link in this graph.
+ * Ignored when inserting.
+ *
+ * @name Link#id
+ */
 
+/**
+ * Some reference to source. Can be undefined.
+ *
+ * @name Link#source
+ */
 
+/**
+ * Some reference to target. Can be undefined.
+ *
+ * @name Link#target
+ */
 
+/**
+ * Interface for links selection from graph.
+ * Valid any keys and values, if adaptation methods was able to work with them.
+ * To find an empty value, you need to specify as value undefined.
+ * Not specified keys will not participate in the search. 
+ *
+ * @interface LinkSelector
+ */
 
+/**
+ * Unique id of link in this graph.
+ *
+ * @name LinkSelector#id
+ */
 
+/**
+ * Some reference to source.
+ *
+ * @name LinkSelector#source
+ */
 
-    
+/**
+ * Some reference to target.
+ *
+ * @name LinkSelector#target
+ */
 
+/**
+ * Interface for links modification.
+ * Valid any keys and values, if adaptation methods was able to work with them.
+ * To delete some value, just specify it value as undefined.
+ * Not specified keys will not participate in the links modification.
+ *
+ * @interface LinkModifier
+ */
 
-    <section class="readme">
-        <article><h1>Graph</h1><p>Graph methods and event handlers based on adapter.</p>
-<h2>License</h2><p>The MIT License (MIT)
-Copyright (c) 2016 Ivan S Glazunov <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#105;&#118;&#x61;&#110;&#x73;&#x67;&#108;&#x61;&#122;&#117;&#x6e;&#111;&#118;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;">&#105;&#118;&#x61;&#110;&#x73;&#x67;&#108;&#x61;&#122;&#117;&#x6e;&#111;&#118;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p></article>
+/**
+ * Some reference to source.
+ *
+ * @name LinkModifier#source
+ */
+
+/**
+ * Some reference to target.
+ *
+ * @name LinkModifier#target
+ */
+
+/**
+ * Options for links selection methods.
+ *
+ * @interface SelectOptions
+ */
+
+/**
+ * Sort order in database syntax.
+ *
+ * @name SelectOptions#sort
+ * @type {Object.&lt;string, boolean>}
+ * @description Sorting by source key `{ source: true }`
+ */
+
+/**
+ * Number of results to skip.
+ *
+ * @name SelectOptions#skip
+ * @type {Number}
+ */
+
+/**
+ * Maximum number of results.
+ *
+ * @name SelectOptions#limit
+ * @type {Number}
+ */</code></pre>
+        </article>
     </section>
-
-
 
 
 

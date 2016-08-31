@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>graph.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="-_.html"></a></li><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">graph.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Class to inherit. Class with methods for control links in graph.
+ * Must be completed for adaptation to a particular database.
+ * 
+ * @class
+ */
+export class Graph {
+  
+  /**
+   * Construct new graph and checks for required adaptation methods.
+   * @throws {Error} if the adapter methods is not complete
+   */
+  constructor() {
+    if (this.insert == Graph.prototype.insert) {
+      throw new Error('Method `insert` is not adapted.');
+    }
+    if (this.update == Graph.prototype.update) {
+      throw new Error('Method `update` is not adapted.');
+    }
+    if (this.remove == Graph.prototype.remove) {
+      throw new Error('Method `remove` is not adapted.');
+    }
+    if (this.query == Graph.prototype.query) {
+      throw new Error('Method `query` is not adapted.');
+    }
+    if (this.options == Graph.prototype.options) {
+      throw new Error('Method `options` is not adapted.');
+    }
+    if (this.fetch == Graph.prototype.fetch) {
+      throw new Error('Method `fetch` is not adapted.');
+    }
+    if (this.each == Graph.prototype.each) {
+      throw new Error('Method `each` is not adapted.');
+    }
+    if (this.map == Graph.prototype.map) {
+      throw new Error('Method `map` is not adapted.');
+    }
+    if (this.on == Graph.prototype.on) {
+      throw new Error('Method `on` is not adapted.');
+    }
+  }
+  
+  /**
+   * Should insert new link into graph.
+   * If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.
+   * 
+   * @param {Link} link
+   * @param {Graph~insertCallback} [callback]
+   * @return {string} [id]
+   */
+  insert(link, callback) {}
+  
+  /**
+   * Optional callback. If present, called with an error object as the first argument and, if no error, the unique id of inserted link as the second.
+   *
+   * @callback Graph~insertCallback
+   * @param {Error} [error]
+   * @param {string} [id]
+   */
+  
+  /**
+   * Should update to new state of modifier object link by unique id or by link query object.
+   * If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.
+   * 
+   * @param {string|LinkSelector} selector
+   * @param {LinkModifier} modifier
+   * @param {Graph~updateCallback} [callback]
+   * @return {number} [count]
+   */
+  update(selector, modifier, callback) {}
+  
+  /**
+   * Optional callback. If present, called with an error object as the first argument and, if no error, the number of affected documents as the second.
+   *
+   * @callback Graph~updateCallback
+   * @param {Error} [error]
+   * @param {number} [count]
+   */
+  
+  /**
+   * Should remove link by unique id or by link query object.
+   * 
+   * @param {string|LinkSelector} selector
+   * @param {Graph~removeCallback} [callback]
+   */
+  remove(selector, callback) {}
+  
+  /**
+   * Optional callback. If present, called with an error object as the first argument.
+   *
+   * @callback Graph~removeCallback
+   * @param {Error} [error]
+   * @param {number} [count]
+   */
+  
+  /**
+   * Should generate adapter for database query for links search by unique id or by link query object.
+   * 
+   * @param {string|LinkSelector} selector
+   * @return {*} query
+   */
+  query(selector) {}
+  
+  /**
+   * Should generate adapter for database options. 
+   * 
+   * @param {Object} [options]
+   * @return {*} options - a options suitable for the database
+   */
+  options(options) {}
+  
+  /**
+   * Find and all matching links as an Array.
+   * 
+   * @param {string|LinkSelector} selector
+   * @param {SelectOptions} [options]
+   * @param {Graph~fetchCallback} [callback]
+   * @return {Link[]} links - result links objects in array
+   */
+  fetch(selector, options, callback) {}
+  
+  /**
+   * Optional callback. If present, called with an error object as the first argument and, if no error, the result links objects in array.
+   *
+   * @callback Graph~fetchCallback
+   * @param {Error} [error]
+   * @param {Link[]} [links]
+   */
+  
+  /**
+   * Should call callback once for each matching document, sequentially and synchronously.
+   * 
+   * @param {string|LinkSelector} selector
+   * @param {SelectOptions} [options]
+   * @param {Graph~eachCallback} [callback]
+   */
+  each(selector, options, callback) {}
+  
+  /**
+   * @callback Graph~eachCallback
+   * @param {Link} [link]
+   */
+  
+  /**
+   * Should map callback over all matching documents. Returns an Array.
+   * 
+   * @param {string|LinkSelector} selector
+   * @param {SelectOptions} [options]
+   * @param {Graph~mapCallback} [callback]
+   * @return {Array} results
+   */
+  map(selector, options, callback) {}
+  
+  /**
+   * @callback Graph~mapCallback
+   * @param {Link} [link]
+   * @return {*} result
+   */
+  
+  /**
+   * Should subscribe to the events: link, unlink, insert, update, remove.
+   * 
+   * @param {string} event - name
+   * @param {Graph-onCallback} callback
+   */
+  on(event, callback) {}
+  
+  /**
+   * @callback Graph~onCallback
+   * @param {Link} [oldLink] - can be undefined on link and insert events
+   * @param {Link} [newLink] - can be undefined on unlink and remove events
+   * @param {Object} [context] - additional app information, such as context.userId
+   */
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Aug 31 2016 02:43:37 GMT+0000 (UTC) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
