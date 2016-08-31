@@ -26,8 +26,7 @@
   "main": "./lib/index.js",
   "directories": {
     "lib": "lib",
-    "test": "tests",
-    "example": "examples"
+    "test": "tests"
   },
   "dependencies": {
     "fbemitter": "^2.0.2",
