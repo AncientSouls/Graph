@@ -30,16 +30,19 @@
     "example": "examples"
   },
   "dependencies": {
+    "fbemitter": "^2.0.2",
+    "lodash": "^4.15.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "source-map-support": "^0.4.2"
   },
   "scripts": {
     "compile": "babel --presets es2015 -d ./ src/",
     "prepublish": "npm run compile",
-    "test": "mocha tests/index.js"
+    "test": "mocha tests/index.js --require source-map-support/register"
   }
 }

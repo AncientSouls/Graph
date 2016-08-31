@@ -23,6 +23,9 @@ export class Graph {
     if (this.query == Graph.prototype.query) {
       throw new Error('Method `query` is not adapted.');
     }
+    if (this.options == Graph.prototype.options) {
+      throw new Error('Method `options` is not adapted.');
+    }
     if (this.fetch == Graph.prototype.fetch) {
       throw new Error('Method `fetch` is not adapted.');
     }
@@ -41,11 +44,11 @@ export class Graph {
    * Should insert new link into graph.
    * If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.
    * 
-   * @param {LinkModifier} modifierLink
+   * @param {Link} link
    * @param {Graph~insertCallback} [callback]
    * @return {string} [id]
    */
-  insert(modifierLink, callback) {}
+  insert(link, callback) {}
   
   /**
    * Optional callback. If present, called with an error object as the first argument and, if no error, the unique id of inserted link as the second.
@@ -80,7 +83,7 @@ export class Graph {
    * @param {string|LinkSelector} selector
    * @param {Graph~removeCallback} [callback]
    */
-  remove(selector) {}
+  remove(selector, callback) {}
   
   /**
    * Optional callback. If present, called with an error object as the first argument.
@@ -91,18 +94,26 @@ export class Graph {
    */
   
   /**
-   * Should generate query for links search by unique id or by link query object.
+   * Should generate adapter for database query for links search by unique id or by link query object.
    * 
    * @param {string|LinkSelector} selector
-   * @return {*} query - a query suitable for the database
+   * @return {*} query
    */
-  query(selector, options) {}
+  query(selector) {}
+  
+  /**
+   * Should generate adapter for database options. 
+   * 
+   * @param {Object} [options]
+   * @return {*} options - a options suitable for the database
+   */
+  options(options) {}
   
   /**
    * Find and all matching links as an Array.
    * 
    * @param {string|LinkSelector} selector
-   * @param {Options} [options] - a query suitable for the database
+   * @param {SelectOptions} [options]
    * @param {Graph~fetchCallback} [callback]
    * @return {Link[]} links - result links objects in array
    */
@@ -118,10 +129,9 @@ export class Graph {
   
   /**
    * Should call callback once for each matching document, sequentially and synchronously.
-   * This interface is compatible with [Array.forEach]{@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach}.
    * 
    * @param {string|LinkSelector} selector
-   * @param {Options} [options] - a query suitable for the database
+   * @param {SelectOptions} [options]
    * @param {Graph~eachCallback} [callback]
    */
   each(selector, options, callback) {}
@@ -133,10 +143,9 @@ export class Graph {
   
   /**
    * Should map callback over all matching documents. Returns an Array.
-   * This interface is compatible with [Array.map]{@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map}.
    * 
    * @param {string|LinkSelector} selector
-   * @param {Options} [options] - a query suitable for the database
+   * @param {SelectOptions} [options]
    * @param {Graph~mapCallback} [callback]
    * @return {Array} results
    */
@@ -152,7 +161,7 @@ export class Graph {
    * Should subscribe to the events: link, unlink, insert, update, remove.
    * 
    * @param {string} event - name
-   * @param {Graph-onCallback} [callback]
+   * @param {Graph-onCallback} callback
    */
   on(event, callback) {}
   

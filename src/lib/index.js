@@ -10,6 +10,13 @@ export { Graph };
  */
 
 /**
+ * Unique id of link in this graph.
+ * Ignored when inserting.
+ *
+ * @name Link#id
+ */
+
+/**
  * Some reference to source. Can be undefined.
  *
  * @name Link#source
@@ -28,6 +35,12 @@ export { Graph };
  * Not specified keys will not participate in the search. 
  *
  * @interface Link
+ */
+
+/**
+ * Unique id of link in this graph.
+ *
+ * @name Link#id
  */
 
 /**
@@ -52,6 +65,12 @@ export { Graph };
  */
 
 /**
+ * Unique id of link in this graph. Can not be modified!
+ *
+ * @name Link#id
+ */
+
+/**
  * Some reference to source.
  *
  * @name Link#source
@@ -61,4 +80,28 @@ export { Graph };
  * Some reference to target.
  *
  * @name Link#target
+ */
+
+/**
+ * Options for links selection methods.
+ *
+ * @interface SelectOptions
+ */
+
+/**
+ * Sort order in database syntax.
+ *
+ * @name {Object.<string, boolean>} sort
+ */
+
+/**
+ * Number of results to skip.
+ *
+ * @name {Number} skip
+ */
+
+/**
+ * Maximum number of results.
+ *
+ * @name {Number} limit
  */
