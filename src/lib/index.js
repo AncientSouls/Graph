@@ -85,17 +85,21 @@ export { Graph };
 /**
  * Sort order in database syntax.
  *
- * @name {Object.<string, boolean>} sort
+ * @name SelectOptions#sort
+ * @type {Object.<string, boolean>}
+ * @description Sorting by source key `{ source: true }`
  */
 
 /**
  * Number of results to skip.
  *
- * @name {Number} skip
+ * @name SelectOptions#skip
+ * @type {Number}
  */
 
 /**
  * Maximum number of results.
  *
- * @name {Number} limit
+ * @name SelectOptions#limit
+ * @type {Number}
  */
