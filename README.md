@@ -22,10 +22,10 @@ graph.on('link', (oldLink, newLink, context)  => {
 });
 
 graph.on('unlink', (oldLink, newLink, context)  => {
-  console.log('Unink handled');
+  console.log('Unlink handled');
 });
 
-graph.insert({id: 1, sourse: 1, target: 1}, (error, id) => {
+graph.insert({id: 1, source: 1, target: 1}, (error, id) => {
   id; // 1
 }); 
 // Link handled
@@ -33,23 +33,23 @@ graph.insert({id: 1, sourse: 1, target: 1}, (error, id) => {
 collection; 
 /**
  * [
- *   {id: 1, sourse': 1, target: 1},
+ *   {id: 1, source': 1, target: 1},
  * ]
  */
 
-graph.insert({id: 2, sourse: 2, target: 1, someText: anotherOne}, (error, id) => {
+graph.insert({id: 2, source: 2, target: 1, someText: 4}, (error, id) => {
   id; // 2
 });
 // Link handled
 collection;
 /**
  * [
- *   {id: 1, sourse: 1, target: 1},
-     {id: 2, sourse: 2, target: 1},
+ *   {id: 1, source: 1, target: 1},
+     {id: 2, source: 2, target: 1},
  * ]
  */ 
 
-graph.insert({id: 3, sourse: 1, target: 2}, (error, id) => {
+graph.insert({id: 3, source: 1, target: 2}, (error, id) => {
   id; // 2
 });
 // Link handled
@@ -57,71 +57,71 @@ graph.insert({id: 3, sourse: 1, target: 2}, (error, id) => {
 collection; 
 /**
  * [
- *   {id: 1, sourse: 1, target: 1},
-     {id: 2, sourse: 2, target: 1},
-     {id: 3, sourse: 1, target: 2},
+ *   {id: 1, source: 1, target: 1},
+     {id: 2, source: 2, target: 1},
+     {id: 3, source: 1, target: 2},
  * ]
  */ 
 
-graph.update({target: 1}, {sourse: 1}, (error, count) => {
+graph.update({target: 1}, {source: 1}, (error, count) => {
   count; // 2
 });
-// Unink handled
+// Unlink handled
 // Link handled
 
 collection; 
 /**
  * [
- *   {id: 1, sourse: 1, target: 1},
- *   {id: 2, sourse: 1, target: 1},
- *   {id: 3, sourse: 1, target: 2},
+ *   {id: 1, source: 1, target: 1},
+ *   {id: 2, source: 1, target: 1},
+ *   {id: 3, source: 1, target: 2},
  * ]
  */ 
  
-graph.update(2, {sourse: 2}, (error, count) => {
+graph.update(2, {source: 2}, (error, count) => {
   count; // 1
 });
-// Unink handled
+// Unlink handled
 // Link handled
 
 collection; 
 /**
  * [
- *   {id: 1, sourse: 1, target: 1},
- *   {id: 2, sourse: 2, target: 1},
- *   {id: 3, sourse: 1, target: 2},
+ *   {id: 1, source: 1, target: 1},
+ *   {id: 2, source: 2, target: 1},
+ *   {id: 3, source: 1, target: 2},
  * ]
  */
 
-graph.remove({sourse: 2}, (error, count) => {
+graph.remove({source: 2}, (error, count) => {
   count; // 1
 });
-// Unink handled
+// Unlink handled
 
 collection; 
 /**
  * [
- *   {id: 2, sourse: 2, target: 1},
- *   {id: 3, sourse: 1, target: 2},
+ *   {id: 2, source: 2, target: 1},
+ *   {id: 3, source: 1, target: 2},
  * ]
  */ 
 
-graph.remove(2, {sourse: 1}, (error, count) => {
+graph.remove(2, {source: 1}, (error, count) => {
   count; // 1
 });
-// Unink handled
+// Unlink handled
 
 collection; 
 /**
  * [
- *   {id: 3, sourse: 1, target: 2},
+ *   {id: 3, source: 1, target: 2},
  * ]
  */ 
 
 lodash.filter(collection, graph.query({source: 1}));
 /**
  * [
- *   {id: 3, sourse: 1, target: 2},
+ *   {id: 3, source: 1, target: 2},
  * ]
  */ 
 
