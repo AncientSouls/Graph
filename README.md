@@ -1,5 +1,7 @@
 # AncientGraph
 
+[![npm version](https://badge.fury.io/js/ancient-graph.svg)](https://badge.fury.io/js/ancient-graph)
+
 Graph methods and event handlers based on adapter.
 
 ## Install
@@ -10,115 +12,116 @@ npm install --save ancient-graph
 ## Example
 
 ```js
-import { Graph } from ancient-graph/lib/object.js;
+import { Graph } from 'ancient-graph/lib/object.js';
 
 var collection = [];
-var graph = new Graph(collection, { id: id, source: source, target: target });
+var graph = new Graph(collection, { id: 'id', source: 'source', target: 'target' });
 
-graph.on(insert,
-(oldLink, newLink, context)  => {
-  console.log('Insert done');
+graph.on('link', (oldLink, newLink, context)  => {
+  console.log('Link handled');
 });
 
-graph.insert({id : 1, sourse : 1, target : 1},
-(error, id) => {
-  id; //1
+graph.on('unlink', (oldLink, newLink, context)  => {
+  console.log('Unink handled');
+});
+
+graph.insert({id: 1, sourse: 1, target: 1}, (error, id) => {
+  id; // 1
 }); 
+// Link handled
+
 collection; 
 /**
  * [
- *   {id : 1, sourse' : 1, target : 1},
+ *   {id: 1, sourse': 1, target: 1},
  * ]
  */
 
-graph.insert({id : 2, sourse : 2, target : 1, someText : anotherOne},
-(error, id) => {
-  id; //2
+graph.insert({id: 2, sourse: 2, target: 1, someText: anotherOne}, (error, id) => {
+  id; // 2
 });
-collection; 
+// Link handled
+collection;
 /**
  * [
- *   {id : 1, sourse : 1, target : 1},
-     {id : 2, sourse : 2, target : 1},
+ *   {id: 1, sourse: 1, target: 1},
+     {id: 2, sourse: 2, target: 1},
  * ]
  */ 
 
-graph.insert({id : 3, sourse : 1, target : 2},
-(error, id) => {
-  id; //2
-);
+graph.insert({id: 3, sourse: 1, target: 2}, (error, id) => {
+  id; // 2
+});
+// Link handled
+
 collection; 
 /**
  * [
- *   {id : 1, sourse : 1, target : 1},
-     {id : 2, sourse : 2, target : 1},
-     {id : 3, sourse : 1, target : 2},
+ *   {id: 1, sourse: 1, target: 1},
+     {id: 2, sourse: 2, target: 1},
+     {id: 3, sourse: 1, target: 2},
  * ]
  */ 
 
-graph.on(update,
-(oldLink, newLink, context) => {
-  console.log('Update done');
+graph.update({target: 1}, {sourse: 1}, (error, count) => {
+  count; // 2
 });
+// Unink handled
+// Link handled
 
-graph.update({target : 1}, {sourse : 1},
-(error, count) => {
-  count; //2
-});
 collection; 
 /**
  * [
- *   {id : 1, sourse : 1, target : 1},
- *   {id : 2, sourse : 1, target : 1},
- *   {id : 3, sourse : 1, target : 2},
- * ]
- */ 
- 
-graph.update(2, {sourse : 2}, 
-(error, count) => {
-  count; //1
-});
-collection; 
-/**
- * [
- *   {id : 1, sourse : 1, target : 1},
- *   {id : 2, sourse : 2, target : 1},
- *   {id : 3, sourse : 1, target : 2},
+ *   {id: 1, sourse: 1, target: 1},
+ *   {id: 2, sourse: 1, target: 1},
+ *   {id: 3, sourse: 1, target: 2},
  * ]
  */ 
  
-graph.on(remove,
-(oldLink, newLink, context) => {
-  console.log('Remove done')
+graph.update(2, {sourse: 2}, (error, count) => {
+  count; // 1
 });
+// Unink handled
+// Link handled
 
-graph.remove({sourse : 2},
-(error, count) => {
-  count; //1
-});
 collection; 
 /**
  * [
- *   {id : 2, sourse : 2, target : 1},
- *   {id : 3, sourse : 1, target : 2},
+ *   {id: 1, sourse: 1, target: 1},
+ *   {id: 2, sourse: 2, target: 1},
+ *   {id: 3, sourse: 1, target: 2},
  * ]
- */ 
+ */
 
-graph.remove(2, {sourse : 1},
-(error, count) => {
-  count; //1
+graph.remove({sourse: 2}, (error, count) => {
+  count; // 1
 });
+// Unink handled
+
 collection; 
 /**
  * [
- *   {id : 3, sourse : 1, target : 2},
+ *   {id: 2, sourse: 2, target: 1},
+ *   {id: 3, sourse: 1, target: 2},
  * ]
  */ 
 
-lodash.filter(collection, graph.query({ source: 1}));
+graph.remove(2, {sourse: 1}, (error, count) => {
+  count; // 1
+});
+// Unink handled
+
+collection; 
 /**
  * [
- *   {id : 3, sourse : 1, target : 2},
+ *   {id: 3, sourse: 1, target: 2},
+ * ]
+ */ 
+
+lodash.filter(collection, graph.query({source: 1}));
+/**
+ * [
+ *   {id: 3, sourse: 1, target: 2},
  * ]
  */ 
 
