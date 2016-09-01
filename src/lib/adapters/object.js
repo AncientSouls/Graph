@@ -73,12 +73,6 @@ export class Graph extends AncientGraph {
    */
   update(selector, modifier, callback) {
     var results = this._fetch(selector);
-    var _modifier = {};
-    for (var m in modifier) {
-      if (this.fields[m]) {
-        _modifier[this.fields[m]] = modifier[m];
-      }
-    }
     for (var r in results) {
       var oldResult = lodash.cloneDeep(results[r]);
       for (var m in modifier) {
@@ -138,7 +132,7 @@ export class Graph extends AncientGraph {
   query(selector) {
     var type = typeof(selector);
     if (type == 'string' || type == 'number') {
-      return function(doc) { return doc.id == selector };
+      return (doc) => { return doc[this.fields['id']] == selector };
     } else if (type == 'object') {
       return (doc) => {
         for (var m in selector) {
@@ -284,7 +278,7 @@ export class Graph extends AncientGraph {
    * Should subscribe to the events: link, unlink, insert, update, remove.
    * 
    * @param {string} event - name
-   * @param {Graph-onCallback} callback
+   * @param {Graph~onCallback} callback
    */
   on(event, callback) {
     if (event == 'insert') {

@@ -161,7 +161,7 @@ export class Graph {
    * Should subscribe to the events: link, unlink, insert, update, remove.
    * 
    * @param {string} event - name
-   * @param {Graph-onCallback} callback
+   * @param {Graph~onCallback} callback
    */
   on(event, callback) {}
   
