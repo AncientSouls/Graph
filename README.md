@@ -115,7 +115,7 @@ collection;
  * ]
  */ 
 
-console.log(lodash.filter(collection, graph.query({ source: 1})));
+lodash.filter(collection, graph.query({ source: 1}));
 /**
  * [
  *   {id : 3, sourse : 1, target : 2},
