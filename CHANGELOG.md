@@ -1,3 +1,9 @@
+#### 0.0.2 (2016-9-1)
+
+##### Bug Fixes
+
+* **adapter:** Fix document to link generation. ([da90f46d](https://github.com/AncientSouls/Graph/commit/da90f46d762f9662036e56676e24ab44571d63b3))
+
 #### 0.0.1 (2016-9-1)
 
 ##### Bug Fixes
