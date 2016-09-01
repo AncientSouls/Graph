@@ -190,8 +190,8 @@ export class Graph extends AncientGraph {
    */
   _generateLink(document) {
     var link = {};
-    for (var f in document) {
-      if (this.fields[f]) {
+    for (var f in this.fields) {
+      if (document.hasOwnProperty(this.fields[f])) {
         link[f] = document[this.fields[f]];
       }
     }
