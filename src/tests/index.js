@@ -1,10 +1,17 @@
 import { Graph } from '../lib/adapters/object.js';
-import { InsertUpdateRemoveFetchTest } from './basic.js';
+import { CompleteTest } from './complete.js';
+import { IncompleteTest } from './incomplete.js';
+import { EmptyTest } from './empty.js';
 import { SubscriptionTest } from './subscription.js';
 
 describe('AncientSouls/Graph', function() {
-  var collection = [];
-  var graph = new Graph(collection, { id: 'id', source: 'source', target: 'target' });
-  InsertUpdateRemoveFetchTest(graph, [1, 2, 3, 4, 5, 6]);
-  SubscriptionTest(graph, [7, 8, 9]);
+  var generateGraph = function() {
+    var collection = [];
+    var graph = new Graph(collection, { id: 'id', source: 'source', target: 'target' });
+    return graph;
+  };
+  CompleteTest(generateGraph, [1, 2, 3]);
+  IncompleteTest(generateGraph, [1, 2, 3]);
+  EmptyTest(generateGraph, [1, 2]);
+  SubscriptionTest(generateGraph, [1, 2, 3]);
 });
