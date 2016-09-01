@@ -1,15 +1,5 @@
 # Graph
 
-
-
-import { Graph } from 'ancient-graph/lib/object.js';
-import { Graph as ObjectGraph } from 'ancient-graph/lib/object.js';
-import { Graph as AncientGraph } from 'ancient-graph';
-ObjectGraph instanceof AncientGraph;
-
-
-# Graph^0.0.9^
-
 Graph methods and event handlers based on adapter.
 
 ## Install
