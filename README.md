@@ -1,4 +1,4 @@
-# Graph
+# AncientGraph
 
 Graph methods and event handlers based on adapter.
 
@@ -10,44 +10,117 @@ npm install --save ancient-graph
 ## Example
 
 ```js
-import { Graph } from 'ancient-graph/lib/object.js';
-import { Graph as ObjectGraph } from 'ancient-graph/lib/object.js';
-
-
+import { Graph } from ancient-graph/lib/object.js;
 
 var collection = [];
-var graph = new ObjectGraph.Graph(collection, { id: 'id', source: 'source', target: 'target' });
+var graph = new Graph(collection, { id: id, source: source, target: target });
 
-console.log (graph instanceof ObjectGraph); // true
+graph.on(insert,
+(oldLink, newLink, context)  => {
+  console.log('Insert done');
+});
 
-graph.on ('insert', function {console.log('it is event time! First insert done')});
+graph.insert({id : 1, sourse : 1, target : 1},
+(error, id) => {
+  id; //1
+}); 
+collection; 
+/**
+ * [
+ *   {id : 1, sourse' : 1, target : 1},
+ * ]
+ */
 
-graph.insert ({'id' : '1', 'sourse' : '1', 'target' : '1'}, function (error, id) {console.log('first insert, bro');}); 
-console.log (collection); // [{'id' : '1', 'sourse' : '1', 'target' : 1}]
+graph.insert({id : 2, sourse : 2, target : 1, someText : anotherOne},
+(error, id) => {
+  id; //2
+});
+collection; 
+/**
+ * [
+ *   {id : 1, sourse : 1, target : 1},
+     {id : 2, sourse : 2, target : 1},
+ * ]
+ */ 
 
-graph.insert ({'id' : '2', 'sourse' : '1', 'target' : '1', 'someText' : 'anotherOne'}, function (error, id) {console.log('second insert, bro');});
-console.log (collection); // [{'id' : '1', 'sourse' : '1', 'target' : 1}, {'id' : 2, 'sourse' : '1', 'target' : '1'}]
+graph.insert({id : 3, sourse : 1, target : 2},
+(error, id) => {
+  id; //2
+);
+collection; 
+/**
+ * [
+ *   {id : 1, sourse : 1, target : 1},
+     {id : 2, sourse : 2, target : 1},
+     {id : 3, sourse : 1, target : 2},
+ * ]
+ */ 
 
-graph.insert ({'id' : '3', 'sourse' : '1', 'target' : '2'}, function (error, id) {console.log('third insert, bro');});
-console.log (collection); // [{'id' : '1', 'sourse' : '1', 'target' : 1}, {'id' : 2, 'sourse' : '1', 'target' : '1'}, {'id' : 3, 'sourse' : '1', 'target' : '2'}]
+graph.on(update,
+(oldLink, newLink, context) => {
+  console.log('Update done');
+});
 
-graph.on ('update', function (error, id) {console.log('it is event time again! Update me fully, baby')});
+graph.update({target : 1}, {sourse : 1},
+(error, count) => {
+  count; //2
+});
+collection; 
+/**
+ * [
+ *   {id : 1, sourse : 1, target : 1},
+ *   {id : 2, sourse : 1, target : 1},
+ *   {id : 3, sourse : 1, target : 2},
+ * ]
+ */ 
+ 
+graph.update(2, {sourse : 2}, 
+(error, count) => {
+  count; //1
+});
+collection; 
+/**
+ * [
+ *   {id : 1, sourse : 1, target : 1},
+ *   {id : 2, sourse : 2, target : 1},
+ *   {id : 3, sourse : 1, target : 2},
+ * ]
+ */ 
+ 
+graph.on(remove,
+(oldLink, newLink, context) => {
+  console.log('Remove done')
+});
 
-graph.update ({'id' : '1'}, {'sourse' : '2'}, function (error, id) {console.log('first update, bro');});
-console.log (collection); // [{'id' : '1', 'sourse' : '2', 'target' : 1}, {'id' : 2}, {'id' : 3}]
+graph.remove({sourse : 2},
+(error, count) => {
+  count; //1
+});
+collection; 
+/**
+ * [
+ *   {id : 2, sourse : 2, target : 1},
+ *   {id : 3, sourse : 1, target : 2},
+ * ]
+ */ 
 
-graph.update ('2', {'sourse' : '1'}, function (error, id) {console.log('second update, bro');});
-console.log (collection); // [{'id' : '1', 'sourse' : '2', 'target' : 1}, {'id' : 2, 'sourse' : '1', 'target' : '1'}, {'id' : 3, 'sourse' : '1', 'target' : '2'}]
+graph.remove(2, {sourse : 1},
+(error, count) => {
+  count; //1
+});
+collection; 
+/**
+ * [
+ *   {id : 3, sourse : 1, target : 2},
+ * ]
+ */ 
 
-graph.on ('remove', function (error, id) {console.log('it is time for new event! Remove, destroy')});
-
-graph.remove ({'sourse' : '2'}, function (error, id) {console.log('first kill, bro');});
-console.log (collection); // [{'id' : 2, 'sourse' : '1', 'target' : '1'}, {'id' : 3, 'sourse' : '1', 'target' : '2'}]
-
-graph.remove ('2', {'sourse' : '1'}, function (error, id) {console.log('second update, bro');});
-console.log (collection); // [{'id' : 3, 'sourse' : '1', 'target' : '2'}]
-
-console.log (lodash.filter(collection, graph.query({ 'source': '1'}))); // [{'id' : 3, 'sourse' : '1', 'target' : '2'}]
+console.log(lodash.filter(collection, graph.query({ source: 1})));
+/**
+ * [
+ *   {id : 3, sourse : 1, target : 2},
+ * ]
+ */ 
 
 ```
 
