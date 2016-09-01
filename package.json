@@ -2,7 +2,7 @@
   "name": "ancient-graph",
   "private": true,
   "dependencies": {
-    "ancient-graph": "git@github.com:AncientSouls/Graph.git",
+    "ancient-graph": "^0.0.5",
     "jsdoc": "^3.4.0"
   },
   "devDependencies": {
