@@ -1,3 +1,13 @@
+#### 0.0.4 (2016-9-1)
+
+##### New Features
+
+* **tests:** Separate complete, imcomplete and empty links tests. ([b3c06f9c](https://github.com/AncientSouls/Graph/commit/b3c06f9cad9b2832c8f13b39c25393a143d3dde7))
+
+##### Bug Fixes
+
+* **compile:** Remove old compiled files. Need to automate these processes... ([bf4a2fd8](https://github.com/AncientSouls/Graph/commit/bf4a2fd80936ce0befa6a3a0b9e3ab9fde978eed))
+
 #### 0.0.3 (2016-9-1)
 
 ##### Bug Fixes
