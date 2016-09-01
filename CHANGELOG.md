@@ -1,3 +1,9 @@
+#### 0.0.3 (2016-9-1)
+
+##### Bug Fixes
+
+* **tests:** Added before preparation. ([ddc15d01](https://github.com/AncientSouls/Graph/commit/ddc15d014b711dcd6d53fd967d865270af00983b))
+
 #### 0.0.2 (2016-9-1)
 
 ##### Bug Fixes
