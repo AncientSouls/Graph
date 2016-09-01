@@ -1,6 +1,135 @@
-# Graph
+# AncientGraph
+
+[![npm version](https://badge.fury.io/js/ancient-graph.svg)](https://badge.fury.io/js/ancient-graph)
 
 Graph methods and event handlers based on adapter.
+
+## Install
+```bash
+npm install --save ancient-graph
+```
+
+## Example
+
+```js
+import { Graph } from 'ancient-graph/lib/object.js';
+
+var collection = [];
+var graph = new Graph(collection, { id: 'id', source: 'source', target: 'target' });
+
+graph.on('link', (oldLink, newLink, context)  => {
+  console.log('Link handled');
+});
+
+graph.on('unlink', (oldLink, newLink, context)  => {
+  console.log('Unlink handled');
+});
+
+graph.insert({id: 1, source: 1, target: 1}, (error, id) => {
+  id; // 1
+}); 
+// Link handled
+
+collection; 
+/**
+ * [
+ *   {id: 1, source': 1, target: 1},
+ * ]
+ */
+
+graph.insert({id: 2, source: 2, target: 1, someText: 4}, (error, id) => {
+  id; // 2
+});
+// Link handled
+collection;
+/**
+ * [
+ *   {id: 1, source: 1, target: 1},
+     {id: 2, source: 2, target: 1},
+ * ]
+ */ 
+
+graph.insert({id: 3, source: 1, target: 2}, (error, id) => {
+  id; // 2
+});
+// Link handled
+
+collection; 
+/**
+ * [
+ *   {id: 1, source: 1, target: 1},
+     {id: 2, source: 2, target: 1},
+     {id: 3, source: 1, target: 2},
+ * ]
+ */ 
+
+graph.update({target: 1}, {source: 1}, (error, count) => {
+  count; // 2
+});
+// Unlink handled
+// Link handled
+
+collection; 
+/**
+ * [
+ *   {id: 1, source: 1, target: 1},
+ *   {id: 2, source: 1, target: 1},
+ *   {id: 3, source: 1, target: 2},
+ * ]
+ */ 
+ 
+graph.update(2, {source: 2}, (error, count) => {
+  count; // 1
+});
+// Unlink handled
+// Link handled
+
+collection; 
+/**
+ * [
+ *   {id: 1, source: 1, target: 1},
+ *   {id: 2, source: 2, target: 1},
+ *   {id: 3, source: 1, target: 2},
+ * ]
+ */
+
+graph.remove({source: 2}, (error, count) => {
+  count; // 1
+});
+// Unlink handled
+
+collection; 
+/**
+ * [
+ *   {id: 2, source: 2, target: 1},
+ *   {id: 3, source: 1, target: 2},
+ * ]
+ */ 
+
+graph.remove(2, {source: 1}, (error, count) => {
+  count; // 1
+});
+// Unlink handled
+
+collection; 
+/**
+ * [
+ *   {id: 3, source: 1, target: 2},
+ * ]
+ */ 
+
+lodash.filter(collection, graph.query({source: 1}));
+/**
+ * [
+ *   {id: 3, source: 1, target: 2},
+ * ]
+ */ 
+
+```
+
+## Tests
+
+Tests can be started with comand `npm run compile && npm test`. For more information lern [src/tests/index.js](https://github.com/AncientSouls/Graph/blob/master/src/tests/index.js).
 
 ## License
 
