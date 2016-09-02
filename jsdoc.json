@@ -1,3 +1,6 @@
 {
-  "plugins": ["plugins/markdown"]
+  "plugins": ["plugins/markdown"],
+  "source": {
+    "include": ["./node_modules/ancient-graph/src/lib/*.js", "./node_modules/ancient-graph/src/lib/adapters/*.js", "./node_modules/ancient-graph/README.md"]
+  }
 }

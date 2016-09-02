@@ -7,6 +7,7 @@ import { EventEmitter } from 'fbemitter';
  * Adapted for array collection.
  * 
  * @class
+ * @alias ancient-graph.ObjectGraph
  */
 export class Graph extends AncientGraph {
   

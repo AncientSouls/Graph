@@ -1,6 +1,6 @@
 import { Graph } from './graph.js';
-
-export { Graph };
+import { Graph as ObjectGraph } from './adapters/object.js';
+export { Graph, ObjectGraph };
 
 /**
  * Interface for link state representation.
