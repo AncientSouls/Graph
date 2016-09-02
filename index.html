@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="-_.html"></a></li><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
 </nav>
 
 <div id="main">
@@ -47,12 +47,13 @@
 
 
     <section class="readme">
-        <article><h1>AncientGraph</h1><p><a href="https://badge.fury.io/js/ancient-graph"><img src="https://badge.fury.io/js/ancient-graph.svg" alt="npm version"></a></p>
+        <article><h1>AncientGraph</h1><p><a href="https://badge.fury.io/js/ancient-graph"><img src="https://badge.fury.io/js/ancient-graph.svg" alt="npm version"></a>
+<a href="https://gitter.im/AncientSouls/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/AncientSouls/Lobby"></a></p>
 <p>Graph methods and event handlers based on adapter.</p>
-<h2>Install</h2><pre class="prettyprint source lang-bash"><code>npm install --save ancient-graph</code></pre><h2>Example</h2><pre class="prettyprint source lang-js"><code>import { Graph } from 'ancient-graph/lib/object.js';
+<h2>Install</h2><pre class="prettyprint source lang-bash"><code>npm install --save ancient-graph</code></pre><h2>Example</h2><pre class="prettyprint source lang-js"><code>import { ObjectGraph } from 'ancient-graph';
 
 var collection = [];
-var graph = new Graph(collection, { id: 'id', source: 'source', target: 'target' });
+var graph = new ObjectGraph(collection, { id: 'id', source: 'source', target: 'target' });
 
 graph.on('link', (oldLink, newLink, context)  => {
   console.log('Link handled');
@@ -138,12 +139,12 @@ graph.remove({source: 2}, (error, count) => {
 collection; 
 /**
  * [
- *   {id: 2, source: 2, target: 1},
+ *   {id: 1, source: 1, target: 1},
  *   {id: 3, source: 1, target: 2},
  * ]
  */ 
 
-graph.remove(2, {source: 1}, (error, count) => {
+graph.remove(3, (error, count) => {
   count; // 1
 });
 // Unlink handled
@@ -151,7 +152,7 @@ graph.remove(2, {source: 1}, (error, count) => {
 collection; 
 /**
  * [
- *   {id: 3, source: 1, target: 2},
+ *   {id: 1, source: 1, target: 1},
  * ]
  */ 
 
@@ -162,7 +163,7 @@ lodash.filter(collection, graph.query({source: 1}));
  * ]
  */</code></pre><h2>Tests</h2><p>Tests can be started with comand <code>npm run compile &amp;&amp; npm test</code>. For more information lern <a href="https://github.com/AncientSouls/Graph/blob/master/src/tests/index.js">src/tests/index.js</a>.</p>
 <h2>License</h2><p>The MIT License (MIT)
-Copyright (c) 2016 Ivan S Glazunov <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#105;&#118;&#97;&#110;&#115;&#x67;&#x6c;&#97;&#x7a;&#x75;&#x6e;&#111;&#118;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#105;&#118;&#97;&#110;&#115;&#x67;&#x6c;&#97;&#x7a;&#x75;&#x6e;&#111;&#118;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a></p>
+Copyright (c) 2016 Ivan S Glazunov <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#105;&#118;&#97;&#110;&#115;&#x67;&#108;&#x61;&#x7a;&#x75;&#110;&#111;&#118;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#105;&#118;&#97;&#110;&#115;&#x67;&#108;&#x61;&#x7a;&#x75;&#110;&#111;&#118;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p></article>
@@ -178,7 +179,7 @@ Copyright (c) 2016 Ivan S Glazunov <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 01 2016 23:24:01 GMT+0000 (UTC) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Sep 02 2016 16:33:35 GMT+0000 (UTC) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

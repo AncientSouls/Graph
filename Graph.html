@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="-_.html"></a></li><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
 </nav>
 
 <div id="main">
@@ -44,6 +44,9 @@
         Graph
         </h2>
         
+            <div class="class-description">Class to inherit. Class with methods for control links in graph.
+Must be completed for adaptation to a particular database.</div>
+        
     
 </header>
 
@@ -53,6 +56,8 @@
         
 
     
+    <h2>Constructor</h2>
+    
 
     <h4 class="name" id="Graph"><span class="type-signature"></span>new Graph<span class="signature">()</span><span class="type-signature"></span></h4>
 
@@ -61,7 +66,7 @@
 
 
 <div class="description">
-    <p>Construct new graph and checks for required adaptation methods.</p>
+    `import { Graph } from 'ancient-graph';`
 </div>
 
 
@@ -105,7 +110,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line13">line 13</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -126,35 +131,6 @@
 
 
 
-<h5>Throws:</h5>
-
-        
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <p>if the adapter methods is not complete</p>
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-
-    
 
 
 
@@ -190,7 +166,7 @@
 
 
 <div class="description">
-    <p>Should call callback once for each matching document, sequentially and synchronously.</p>
+    Should call callback once for each matching document, sequentially and synchronously.
 </div>
 
 
@@ -362,7 +338,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line137">line 137</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line138">line 138</a>
     </li></ul></dd>
     
 
@@ -393,14 +369,14 @@
 
     
 
-    <h4 class="name" id="fetch"><span class="type-signature"></span>fetch<span class="signature">(selector, options<span class="signature-attributes">opt</span>, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array:<a href="-_.html"></a>.&lt;<a href="Link.html">Link</a>:<a href="-_.html"></a>>}</span></h4>
+    <h4 class="name" id="fetch"><span class="type-signature"></span>fetch<span class="signature">(selector, options<span class="signature-attributes">opt</span>, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="Link.html">Link</a>>}</span></h4>
 
     
 
 
 
 <div class="description">
-    <p>Find and all matching links as an Array.</p>
+    Find and all matching links as an Array.
 </div>
 
 
@@ -572,7 +548,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line120">line 120</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line121">line 121</a>
     </li></ul></dd>
     
 
@@ -599,7 +575,7 @@
 
         
 <div class="param-desc">
-    <p>links - result links objects in array</p>
+    links - result links objects in array
 </div>
 
 
@@ -610,7 +586,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Array:<a href="-_.html"></a>.&lt;<a href="Link.html">Link</a>:<a href="-_.html"></a>></span>
+<span class="param-type">Array.&lt;<a href="Link.html">Link</a>></span>
 
 
     </dd>
@@ -632,8 +608,8 @@
 
 
 <div class="description">
-    <p>Should insert new link into graph.
-If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.</p>
+    Should insert new link into graph.
+If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.
 </div>
 
 
@@ -769,7 +745,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line51">line 51</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -796,7 +772,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
         
 <div class="param-desc">
-    <p>[id]</p>
+    [id]
 </div>
 
 
@@ -829,7 +805,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Should map callback over all matching documents. Returns an Array.</p>
+    Should map callback over all matching documents. Returns an Array.
 </div>
 
 
@@ -1001,7 +977,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line152">line 152</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line153">line 153</a>
     </li></ul></dd>
     
 
@@ -1028,7 +1004,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
         
 <div class="param-desc">
-    <p>results</p>
+    results
 </div>
 
 
@@ -1061,7 +1037,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Should subscribe to the events: link, unlink, insert, update, remove.</p>
+    Should subscribe to the events: link, unlink, insert, update, remove.
 </div>
 
 
@@ -1113,7 +1089,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
             
 
-            <td class="description last"><p>name</p></td>
+            <td class="description last">name</td>
         </tr>
 
     
@@ -1177,7 +1153,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line166">line 166</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line167">line 167</a>
     </li></ul></dd>
     
 
@@ -1215,7 +1191,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Should generate adapter for database options.</p>
+    Should generate adapter for database options.
 </div>
 
 
@@ -1320,7 +1296,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line110">line 110</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -1347,7 +1323,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
         
 <div class="param-desc">
-    <p>options - a options suitable for the database</p>
+    options - a options suitable for the database
 </div>
 
 
@@ -1380,7 +1356,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Should generate adapter for database query for links search by unique id or by link query object.</p>
+    Should generate adapter for database query for links search by unique id or by link query object.
 </div>
 
 
@@ -1476,7 +1452,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line102">line 102</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -1503,7 +1479,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
         
 <div class="param-desc">
-    <p>query</p>
+    query
 </div>
 
 
@@ -1536,7 +1512,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Should remove link by unique id or by link query object.</p>
+    Should remove link by unique id or by link query object.
 </div>
 
 
@@ -1675,7 +1651,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line86">line 86</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -1713,8 +1689,8 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Should update to new state of modifier object link by unique id or by link query object.
-If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.</p>
+    Should update to new state of modifier object link by unique id or by link query object.
+If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.
 </div>
 
 
@@ -1884,7 +1860,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line70">line 70</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -1911,7 +1887,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
         
 <div class="param-desc">
-    <p>[count]</p>
+    [count]
 </div>
 
 
@@ -2051,7 +2027,146 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line139">line 139</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line140">line 140</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~eachCallback"><span class="type-signature"></span>eachCallback<span class="signature">(link<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>link</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Link.html">Link</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line254">line 254</a>
     </li></ul></dd>
     
 
@@ -2089,7 +2204,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Optional callback. If present, called with an error object as the first argument and, if no error, the result links objects in array.</p>
+    Optional callback. If present, called with an error object as the first argument and, if no error, the result links objects in array.
 </div>
 
 
@@ -2166,7 +2281,7 @@ If the database allows, it is recommended to return a synchronous result. This c
             <td class="type">
             
                 
-<span class="param-type">Array:<a href="-_.html"></a>.&lt;<a href="Link.html">Link</a>:<a href="-_.html"></a>></span>
+<span class="param-type">Array.&lt;<a href="Link.html">Link</a>></span>
 
 
             
@@ -2227,7 +2342,183 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line122">line 122</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line123">line 123</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~fetchCallback"><span class="type-signature"></span>fetchCallback<span class="signature">(error<span class="signature-attributes">opt</span>, links<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Optional callback. If present, called with an error object as the first argument and, if no error, the result links objects in array.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>links</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="Link.html">Link</a>></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line232">line 232</a>
     </li></ul></dd>
     
 
@@ -2265,7 +2556,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Optional callback. If present, called with an error object as the first argument and, if no error, the unique id of inserted link as the second.</p>
+    Optional callback. If present, called with an error object as the first argument and, if no error, the unique id of inserted link as the second.
 </div>
 
 
@@ -2403,7 +2694,183 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line53">line 53</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~insertCallback"><span class="type-signature"></span>insertCallback<span class="signature">(error<span class="signature-attributes">opt</span>, id<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Optional callback. If present, called with an error object as the first argument and, if no error, the unique id of inserted link as the second.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -2542,7 +3009,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line154">line 154</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line155">line 155</a>
     </li></ul></dd>
     
 
@@ -2569,7 +3036,168 @@ If the database allows, it is recommended to return a synchronous result. This c
 
         
 <div class="param-desc">
-    <p>result</p>
+    result
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~mapCallback"><span class="type-signature"></span>mapCallback<span class="signature">(link<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>link</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Link.html">Link</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line272">line 272</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    result
 </div>
 
 
@@ -2662,7 +3290,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
             
 
-            <td class="description last"><p>can be undefined on link and insert events</p></td>
+            <td class="description last">can be undefined on link and insert events</td>
         </tr>
 
     
@@ -2695,7 +3323,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
             
 
-            <td class="description last"><p>can be undefined on unlink and remove events</p></td>
+            <td class="description last">can be undefined on unlink and remove events</td>
         </tr>
 
     
@@ -2728,7 +3356,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
             
 
-            <td class="description last"><p>additional app information, such as context.userId</p></td>
+            <td class="description last">additional app information, such as context.userId</td>
         </tr>
 
     
@@ -2769,7 +3397,212 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line168">line 168</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line318">line 318</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~onCallback"><span class="type-signature"></span>onCallback<span class="signature">(oldLink<span class="signature-attributes">opt</span>, newLink<span class="signature-attributes">opt</span>, context<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>oldLink</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Link.html">Link</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">can be undefined on link and insert events</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>newLink</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Link.html">Link</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">can be undefined on unlink and remove events</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">additional app information, such as context.userId</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -2807,7 +3640,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Optional callback. If present, called with an error object as the first argument.</p>
+    Optional callback. If present, called with an error object as the first argument.
 </div>
 
 
@@ -2945,7 +3778,183 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line88">line 88</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line119">line 119</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~removeCallback"><span class="type-signature"></span>removeCallback<span class="signature">(error<span class="signature-attributes">opt</span>, count<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Optional callback. If present, called with an error object as the first argument.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -2983,7 +3992,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 
 
 <div class="description">
-    <p>Optional callback. If present, called with an error object as the first argument and, if no error, the number of affected documents as the second.</p>
+    Optional callback. If present, called with an error object as the first argument and, if no error, the number of affected documents as the second.
 </div>
 
 
@@ -3121,7 +4130,183 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line72">line 72</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="~updateCallback"><span class="type-signature"></span>updateCallback<span class="signature">(error<span class="signature-attributes">opt</span>, count<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Optional callback. If present, called with an error object as the first argument and, if no error, the number of affected documents as the second.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -3163,7 +4348,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 01 2016 23:24:01 GMT+0000 (UTC) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Sep 02 2016 16:33:35 GMT+0000 (UTC) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

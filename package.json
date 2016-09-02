@@ -2,13 +2,13 @@
   "name": "ancient-graph",
   "private": true,
   "dependencies": {
-    "ancient-graph": "^0.0.5",
+    "ancient-graph": "git@github.com:AncientSouls/Graph.git",
     "jsdoc": "^3.4.0"
   },
   "devDependencies": {
     "minami": "^1.1.1"
   },
   "scripts": {
-    "jsdoc": "./node_modules/.bin/jsdoc ./node_modules/ancient-graph/src/lib/*.js ./node_modules/ancient-graph/README.md -d ./ -t ./node_modules/minami -c ./node_modules/ancient-graph/jsdoc.json"
+    "jsdoc": "rm -rf ./node_modules && npm i && ./node_modules/.bin/jsdoc ./node_modules/ancient-graph/src/lib/*.js ./node_modules/ancient-graph/src/lib/adapters/*.js ./node_modules/ancient-graph/README.md -r -d ./ -t ./node_modules/minami"
   }
 }
