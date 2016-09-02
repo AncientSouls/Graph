@@ -1,8 +1,9 @@
-#### 0.0.5 (2016-9-1)
+#### 0.0.6 (2016-9-2)
 
 ##### Documentation Changes
 
 * **readme:**
+  * Fix readme and logic ([092920c8](https://github.com/AncientSouls/Graph/commit/092920c8e004773996a4bfb4350b256d66d7f145))
   * new syntax fix ([c2c53f5a](https://github.com/AncientSouls/Graph/commit/c2c53f5ac16b21f1d35906aef9ffe9dae8e2f3e5))
   * new beautifuls ([ad11882c](https://github.com/AncientSouls/Graph/commit/ad11882c9ecd4ae7e7ff2f5600f8c03425f3c91f))
   * little console.log fix ([7490e13d](https://github.com/AncientSouls/Graph/commit/7490e13d081764965f508353ec16e9c02ad86bb0))

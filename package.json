@@ -1,6 +1,6 @@
 {
   "name": "ancient-graph",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Graph methods and event handlers based on adapter.",
   "keywords": [
     "javascript",
@@ -41,7 +41,6 @@
   },
   "scripts": {
     "compile": "babel --presets es2015 -d ./ src/",
-    "prepublish": "npm run compile",
     "test": "mocha tests/index.js --require source-map-support/register"
   }
 }
