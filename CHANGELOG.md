@@ -1,7 +1,8 @@
-#### 0.0.6 (2016-9-2)
+#### 0.0.8 (2016-9-2)
 
 ##### Documentation Changes
 
+* **jsdoc:** ObjectGraph support and jsdoc.json enhanced ([137cb3fd](https://github.com/AncientSouls/Graph/commit/137cb3fd7b00104bbfc22f2b1a04ce78ad84b1bc))
 * **readme:**
   * Fix readme and logic ([092920c8](https://github.com/AncientSouls/Graph/commit/092920c8e004773996a4bfb4350b256d66d7f145))
   * new syntax fix ([c2c53f5a](https://github.com/AncientSouls/Graph/commit/c2c53f5ac16b21f1d35906aef9ffe9dae8e2f3e5))
