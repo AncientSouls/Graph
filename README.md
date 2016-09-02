@@ -13,10 +13,10 @@ npm install --save ancient-graph
 ## Example
 
 ```js
-import { Graph } from 'ancient-graph/lib/object.js';
+import { ObjectGraph } from 'ancient-graph';
 
 var collection = [];
-var graph = new Graph(collection, { id: 'id', source: 'source', target: 'target' });
+var graph = new ObjectGraph(collection, { id: 'id', source: 'source', target: 'target' });
 
 graph.on('link', (oldLink, newLink, context)  => {
   console.log('Link handled');
