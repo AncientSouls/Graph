@@ -41,6 +41,9 @@
   },
   "scripts": {
     "compile": "babel --presets es2015 -d ./ src/",
+    "cleaning": "rm -rf ./lib && rm -rf ./tests",
+    "prepublish": "npm run compile && npm test",
+    "postpublish": "npm run cleaning && git push",
     "test": "mocha tests/index.js --require source-map-support/register"
   }
 }
