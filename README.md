@@ -1,6 +1,7 @@
 # AncientGraph
 
 [![npm version](https://badge.fury.io/js/ancient-graph.svg)](https://badge.fury.io/js/ancient-graph)
+[![Join the chat at https://gitter.im/techfort/LokiJS](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/techfort/LokiJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Graph methods and event handlers based on adapter.
 
@@ -101,12 +102,12 @@ graph.remove({source: 2}, (error, count) => {
 collection; 
 /**
  * [
- *   {id: 2, source: 2, target: 1},
+ *   {id: 1, source: 1, target: 1},
  *   {id: 3, source: 1, target: 2},
  * ]
  */ 
 
-graph.remove(2, {source: 1}, (error, count) => {
+graph.remove(3, (error, count) => {
   count; // 1
 });
 // Unlink handled
@@ -114,7 +115,7 @@ graph.remove(2, {source: 1}, (error, count) => {
 collection; 
 /**
  * [
- *   {id: 3, source: 1, target: 2},
+ *   {id: 1, source: 1, target: 1},
  * ]
  */ 
 
