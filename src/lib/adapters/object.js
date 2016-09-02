@@ -7,7 +7,7 @@ import { EventEmitter } from 'fbemitter';
  * Adapted for array collection.
  * 
  * @class
- * @alias ancient-graph.ObjectGraph
+ * @description `import { ObjectGraph as Graph } from 'ancient-graph';`
  */
 class ObjectGraph extends AncientGraph {
   
@@ -15,8 +15,8 @@ class ObjectGraph extends AncientGraph {
    * Construct new graph and checks for required adaptation methods.
    * @param {Array[]} collection
    * @param {Object} fields - matching of fields in the link with fields in document
-   * @param {*} object.source
-   * @param {*} object.target
+   * @param {*} fields.source
+   * @param {*} fields.target
    * @throws {Error} if the adapter methods is not complete
    */
   constructor(collection, fields) {
