@@ -3,8 +3,9 @@
  * Must be completed for adaptation to a particular database.
  * 
  * @class
+ * @description `import { Graph } from 'ancient-graph';`
  */
-export class Graph {
+class Graph {
   
   /**
    * Construct new graph and checks for required adaptation methods.
@@ -172,3 +173,5 @@ export class Graph {
    * @param {Object} [context] - additional app information, such as context.userId
    */
 };
+
+export { Graph };
