@@ -3,13 +3,13 @@ import lodash from 'lodash';
 import { EventEmitter } from 'fbemitter';
 
 /**
- * Class to inherit. Class with methods for control links in graph.
+ * Inherited class. Class with methods for control links in graph.
  * Adapted for array collection.
  * 
  * @class
  * @alias ancient-graph.ObjectGraph
  */
-export class Graph extends AncientGraph {
+class ObjectGraph extends AncientGraph {
   
   /**
    * Construct new graph and checks for required adaptation methods.
@@ -322,3 +322,5 @@ export class Graph extends AncientGraph {
    * @param {Object} [context] - additional app information, such as context.userId
    */
 };
+
+export { ObjectGraph as Graph };
