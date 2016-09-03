@@ -1,4 +1,4 @@
-#### 0.0.10 (2016-9-3)
+#### 0.0.11 (2016-9-3)
 
 ##### Documentation Changes
 
@@ -22,6 +22,7 @@
 
 ##### Bug Fixes
 
+* **scripts:** from path to bin names ([59f4b469](https://github.com/AncientSouls/Graph/commit/59f4b469377140ead35112d359b750e61182d573))
 * **jsdoc:** Move jsdoc settings into gh-pages branch. ([a479f12c](https://github.com/AncientSouls/Graph/commit/a479f12cc2c57dd26ee76030141b70b4fdc3d40c))
 * **adapter:**
   * Cleaning and fix query by id result. ([4abf1129](https://github.com/AncientSouls/Graph/commit/4abf1129c8b28dc219b5da0b48936f4ee4eb760b))
