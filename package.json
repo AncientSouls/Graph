@@ -43,11 +43,11 @@
     "jsdoc": "^3.4.0"
   },
   "scripts": {
-    "compile": "./node_modules/babel-cli/bin/babel.js --presets es2015 -d ./ src/",
+    "compile": "babel --presets es2015 -d ./ src/",
     "cleaning": "rm -rf ./lib && rm -rf ./tests",
     "postpublish": "npm run cleaning && git push",
-    "test": "npm run compile && ./node_modules/mocha tests/index.js --require source-map-support/register",
-    "jsdoc": "npm i && rm -r ./doc/*/ && find ./doc ! -name '.git' -type f -exec rm -rf {} + && ./node_modules/.bin/jsdoc ./src/lib/*.js ./src/lib/adapters/*.js ./README.md -r -d ./doc -t ./node_modules/minami",
+    "test": "npm run compile && mocha tests/index.js --require source-map-support/register",
+    "jsdoc": "npm i && rm -r ./doc/*/ && find ./doc ! -name '.git' -type f -exec rm -rf {} + && jsdoc ./src/lib/*.js ./src/lib/adapters/*.js ./README.md -r -d ./doc -t ./node_modules/minami",
     "gh-pages": "npm run jsdoc && cd ./doc && git push"
   }
 }
