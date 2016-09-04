@@ -42,17 +42,18 @@ class ObjectGraph extends AncientGraph {
         _modifier[this.fields[f]] = link[f];
       }
     }
+    var id, error;
     try {
       var id = this.collection.push(_modifier) - 1;
       this.collection[id][this.fields['id']] = id;
       this.emitter.emit('insert', this.collection[id]);
-      if (callback) {
-        callback(undefined, id)
-      }
-      return id;
-    } catch(error) {
-      callback(error);
+    } catch(_error) {
+      error = _error;
     }
+    if (callback) {
+      callback(error, id)
+    }
+    return id;
   }
   
   /**
