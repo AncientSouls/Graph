@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul><h3>Global</h3><ul><li><a href="global.html#defaultIdGenerator">defaultIdGenerator</a></li></ul>
 </nav>
 
 <div id="main">
@@ -59,7 +59,7 @@ Adapted for array collection.</p></div>
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="ObjectGraph"><span class="type-signature"></span>new ObjectGraph<span class="signature">(collection, fields)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ObjectGraph"><span class="type-signature"></span>new ObjectGraph<span class="signature">(collection, fields, idGenerator<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -90,6 +90,8 @@ Adapted for array collection.</p></div>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -115,6 +117,14 @@ Adapted for array collection.</p></div>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -137,6 +147,14 @@ Adapted for array collection.</p></div>
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -173,7 +191,7 @@ Adapted for array collection.</p></div>
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type">string</span>
 
 
             
@@ -196,7 +214,7 @@ Adapted for array collection.</p></div>
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type">string</span>
 
 
             
@@ -214,6 +232,39 @@ Adapted for array collection.</p></div>
 </table>
 
             </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>idGenerator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Graph.html#~constructorIdGenerator">Graph~constructorIdGenerator</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
         </tr>
 
     
@@ -254,7 +305,7 @@ Adapted for array collection.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line12">line 12</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -449,7 +500,7 @@ Adapted for array collection.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line204">line 204</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line228">line 228</a>
     </li></ul></dd>
     
 
@@ -602,7 +653,7 @@ Adapted for array collection.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line187">line 187</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line211">line 211</a>
     </li></ul></dd>
     
 
@@ -834,7 +885,7 @@ Adapted for array collection.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line248">line 248</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line272">line 272</a>
     </li></ul></dd>
     
 
@@ -1044,7 +1095,7 @@ Adapted for array collection.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line223">line 223</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line247">line 247</a>
     </li></ul></dd>
     
 
@@ -1241,7 +1292,7 @@ Return a synchronous result. This can be useful in your application. But for wri
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line37">line 37</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -1473,7 +1524,7 @@ Return a synchronous result. This can be useful in your application. But for wri
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line268">line 268</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line292">line 292</a>
     </li></ul></dd>
     
 
@@ -1649,7 +1700,7 @@ Return a synchronous result. This can be useful in your application. But for wri
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line285">line 285</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line309">line 309</a>
     </li></ul></dd>
     
 
@@ -1792,7 +1843,7 @@ Return a synchronous result. This can be useful in your application. But for wri
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line160">line 160</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -1948,7 +1999,7 @@ Return a synchronous result. This can be useful in your application. But for wri
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line134">line 134</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line158">line 158</a>
     </li></ul></dd>
     
 
@@ -2147,7 +2198,7 @@ Return a synchronous result. This can be useful in your application. But for wri
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line109">line 109</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line133">line 133</a>
     </li></ul></dd>
     
 
@@ -2356,7 +2407,7 @@ If the database allows, it is recommended to return a synchronous result. This c
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line76">line 76</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line100">line 100</a>
     </li></ul></dd>
     
 
@@ -2422,7 +2473,7 @@ If the database allows, it is recommended to return a synchronous result. This c
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Sep 04 2016 06:29:22 GMT+0000 (UTC) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 05 2016 05:44:23 GMT+0000 (UTC) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

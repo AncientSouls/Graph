@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>LinkModifier - Documentation</title>
+    <title>Global - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">LinkModifier</h1>
+    <h1 class="page-title">Global</h1>
     
 
     
@@ -41,7 +41,7 @@
 <header>
     
         <h2>
-        LinkModifier
+        
         </h2>
         
     
@@ -50,11 +50,6 @@
 <article>
     <div class="container-overview">
     
-        
-            <div class="description"><p>Interface for links modification.
-Valid any keys and values, if adaptation methods was able to work with them.
-To delete some value, just specify it value as undefined.
-Not specified keys will not participate in the links modification.</p></div>
         
 
         
@@ -86,11 +81,6 @@ Not specified keys will not participate in the links modification.</p></div>
 
     
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line58">line 58</a>
-    </li></ul></dd>
     
 
     
@@ -116,19 +106,103 @@ Not specified keys will not participate in the links modification.</p></div>
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         
             
-<h4 class="name" id="source"><span class="type-signature"></span>source<span class="type-signature"></span></h4>
 
+    
+
+    <h4 class="name" id="defaultIdGenerator"><span class="type-signature"></span>defaultIdGenerator<span class="signature">(index, link)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
 
 
 
 <div class="description">
-    <p>Some reference to source.</p>
+    <p>Id generator. By default based on index in array.</p>
 </div>
 
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>link</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Link.html">Link</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -164,7 +238,7 @@ Not specified keys will not participate in the links modification.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line67">line 67</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -180,71 +254,39 @@ Not specified keys will not participate in the links modification.</p></div>
 
 
 
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
         
-            
-<h4 class="name" id="target"><span class="type-signature"></span>target<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    <p>Some reference to target.</p>
+<div class="param-desc">
+    <p>id;</p>
 </div>
 
 
 
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
 
 
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line73">line 73</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
+    </dd>
 </dl>
 
-
-
+    
 
 
 
         
-    
-
     
 
     
