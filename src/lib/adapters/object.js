@@ -161,6 +161,7 @@ class ObjectGraph extends AncientGraph {
       return (doc) => { return doc[this.fields['id']] == selector };
     } else if (type == 'object') {
       return (doc) => {
+        if (typeof(doc) != 'object') return false;
         for (var m in selector) {
           if (this.fields[m]) {
             if (typeof(selector[m]) == 'undefined') {
