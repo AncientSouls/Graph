@@ -1,4 +1,4 @@
-#### 0.0.13 (2016-9-5)
+#### 0.0.14 (2016-9-5)
 
 ##### Documentation Changes
 
@@ -24,6 +24,7 @@
 ##### Bug Fixes
 
 * **adapter:**
+  * Catch undefined doc in array. ([9e9029ec](https://github.com/AncientSouls/Graph/commit/9e9029ecbbce38d94d042f90fdec8788a8b63e6e))
   * Callback optional call ([ef09f31d](https://github.com/AncientSouls/Graph/commit/ef09f31d6261ed576f523528628021c482ef36b5))
   * Move callback out from try/catch This led to catching the error inside the callback. ([56ee556c](https://github.com/AncientSouls/Graph/commit/56ee556c429cd0ad3b6914c9b2b46ff2528f0a36))
   * Cleaning and fix query by id result. ([4abf1129](https://github.com/AncientSouls/Graph/commit/4abf1129c8b28dc219b5da0b48936f4ee4eb760b))
