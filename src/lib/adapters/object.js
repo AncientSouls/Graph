@@ -132,11 +132,15 @@ class ObjectGraph extends AncientGraph {
    */
   remove(selector, callback) {
     var oldLength = this.collection.length;
+    var removed = [];
     lodash.remove(this.collection, (result) => {
       var _query = this.query(selector)(result);
-      if (_query) this.emitter.emit('remove', result);
+      removed.push(result);
       return _query;
     });
+    for (var r in removed) {
+      this.emitter.emit('remove', removed[r]);
+    }
     var newLength = this.collection.length;
     if (callback) callback(undefined, oldLength - newLength);
   }
