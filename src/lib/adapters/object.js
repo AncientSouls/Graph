@@ -135,7 +135,7 @@ class ObjectGraph extends AncientGraph {
     var removed = [];
     lodash.remove(this.collection, (result) => {
       var _query = this.query(selector)(result);
-      removed.push(result);
+      if (_query) removed.push(result)
       return _query;
     });
     for (var r in removed) {
