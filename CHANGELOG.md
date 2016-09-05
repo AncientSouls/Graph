@@ -1,4 +1,4 @@
-#### 0.0.14 (2016-9-5)
+#### 0.0.17 (2016-9-5)
 
 ##### Documentation Changes
 
@@ -24,6 +24,7 @@
 ##### Bug Fixes
 
 * **adapter:**
+  * remove event only after removing ([b3c96e78](https://github.com/AncientSouls/Graph/commit/b3c96e786e0c74855c340f822117eebea26db7c7))
   * Catch undefined doc in array. ([9e9029ec](https://github.com/AncientSouls/Graph/commit/9e9029ecbbce38d94d042f90fdec8788a8b63e6e))
   * Callback optional call ([ef09f31d](https://github.com/AncientSouls/Graph/commit/ef09f31d6261ed576f523528628021c482ef36b5))
   * Move callback out from try/catch This led to catching the error inside the callback. ([56ee556c](https://github.com/AncientSouls/Graph/commit/56ee556c429cd0ad3b6914c9b2b46ff2528f0a36))
@@ -43,3 +44,4 @@
 ##### Refactors
 
 * **export:** Export in separate line. ([007ba44f](https://github.com/AncientSouls/Graph/commit/007ba44f2fba8032eafc0b837910f4de2d15692e))
+
