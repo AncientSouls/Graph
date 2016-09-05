@@ -3,6 +3,17 @@ import lodash from 'lodash';
 import { EventEmitter } from 'fbemitter';
 
 /**
+ * Id generator. By default based on index in array.
+ * 
+ * @param {number} index
+ * @param {Link} link
+ * @return {string} id;
+ */
+var defaultIdGenerator = function(index, link) {
+  return ""+index;
+};
+
+/**
  * Inherited class. Class with methods for control links in graph.
  * Adapted for array collection.
  * 
@@ -15,16 +26,27 @@ class ObjectGraph extends AncientGraph {
    * Construct new graph and checks for required adaptation methods.
    * @param {Array[]} collection
    * @param {Object} fields - matching of fields in the link with fields in document
-   * @param {*} fields.source
-   * @param {*} fields.target
+   * @param {string} fields.source
+   * @param {string} fields.target
+   * @param {Graph~constructorIdGenerator} [idGenerator]
    * @throws {Error} if the adapter methods is not complete
    */
-  constructor(collection, fields) {
+  constructor(collection, fields, idGenerator) {
     super();
     this.collection = collection;
     this.fields = fields;
+    this.idGenerator = idGenerator?idGenerator:defaultIdGenerator
     this.emitter = new EventEmitter();
   }
+  
+  /**
+   * Optional idGenerator. If present, override defaultIdGenerator.
+   *
+   * @callback Graph~constructorIdGenerator
+   * @param {number} index
+   * @param {Link} link
+   * @return {string} id;
+   */
   
   /**
    * Should insert new link into graph.
@@ -42,11 +64,13 @@ class ObjectGraph extends AncientGraph {
         _modifier[this.fields[f]] = link[f];
       }
     }
-    var id, error;
+    var index, error, id;
     try {
-      var id = this.collection.push(_modifier) - 1;
-      this.collection[id][this.fields['id']] = id;
-      this.emitter.emit('insert', this.collection[id]);
+      index = this.collection.push(_modifier) - 1;
+      if (!this.collection[index].hasOwnProperty(this.fields['id'])) {
+        id = this.collection[index][this.fields['id']] = this.idGenerator(index, this.collection[index]);
+      }
+      this.emitter.emit('insert', this.collection[index]);
     } catch(_error) {
       error = _error;
     }
