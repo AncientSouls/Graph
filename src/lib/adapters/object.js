@@ -114,7 +114,7 @@ class ObjectGraph extends AncientGraph {
       return _query;
     });
     var newLength = this.collection.length;
-    callback(undefined, oldLength - newLength);
+    if (callback) callback(undefined, oldLength - newLength);
   }
   
   /**
