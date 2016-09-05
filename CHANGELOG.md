@@ -1,4 +1,4 @@
-#### 0.0.17 (2016-9-5)
+#### 0.0.18 (2016-9-5)
 
 ##### Documentation Changes
 
@@ -24,6 +24,7 @@
 ##### Bug Fixes
 
 * **adapter:**
+  * remove event only if removed... ([7f1f8bc9](https://github.com/AncientSouls/Graph/commit/7f1f8bc904c46573155cb753a7e5b719d32fbeae))
   * remove event only after removing ([b3c96e78](https://github.com/AncientSouls/Graph/commit/b3c96e786e0c74855c340f822117eebea26db7c7))
   * Catch undefined doc in array. ([9e9029ec](https://github.com/AncientSouls/Graph/commit/9e9029ecbbce38d94d042f90fdec8788a8b63e6e))
   * Callback optional call ([ef09f31d](https://github.com/AncientSouls/Graph/commit/ef09f31d6261ed576f523528628021c482ef36b5))
