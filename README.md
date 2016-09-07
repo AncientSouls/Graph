@@ -12,6 +12,8 @@ npm install --save ancient-graph
 
 ## Example
 
+### Graph
+
 ```js
 import { ObjectGraph } from 'ancient-graph';
 
@@ -127,6 +129,34 @@ lodash.filter(collection, graph.query({source: 1}));
  */ 
 
 ```
+
+### Hypergraph
+
+There is support for hypergraphs's links. This means that the value can be an array.
+When searching for an array of uses nonstrict matching.
+
+```js
+graph.insert({ source: [1, 2, 3] });
+graph.insert({ source: 2 });
+graph.fetch({ source: [2] });
+/**
+ * [
+ *   {id: 1, source: [1, 2, 3]},
+ *   {id: 2, source: 2},
+ * ]
+ */ 
+graph.fetch({ source: 2 });
+/**
+ * [
+ *   {id: 1, source: [1, 2, 3]},
+ *   {id: 2, source: 2},
+ * ]
+ */ 
+```
+
+## Sync and Async
+
+All methods necessarily support asynchronous callback results. If the database and adapted graph class allows the results so the same returns in sync. However, the synchronous version of the code is only recommended with the full confidence of support.
 
 ## Tests
 

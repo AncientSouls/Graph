@@ -183,7 +183,21 @@ class ObjectGraph extends AncientGraph {
             if (typeof(selector[m]) == 'undefined') {
               if (doc.hasOwnProperty(this.fields[m])) return false;
             } else {
-              if (doc[this.fields[m]] != selector[m]) return false;
+              if (lodash.isArray(doc[this.fields[m]])) {
+                if (lodash.isArray(selector[m])) {
+                  for (var s in selector[m]) {
+                    if (!lodash.includes(doc[this.fields[m]], selector[m][s])) {
+                      return false;
+                    }
+                  }
+                } else {
+                  if (!lodash.includes(doc[this.fields[m]], selector[m])) {
+                    return false;
+                  }
+                }
+              } else {
+                if (doc[this.fields[m]] != selector[m]) return false;
+              }
             }
           }
         }

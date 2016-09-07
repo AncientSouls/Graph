@@ -8,7 +8,11 @@ var _incomplete = require('./incomplete.js');
 
 var _empty = require('./empty.js');
 
+var _hyper = require('./hyper.js');
+
 var _subscription = require('./subscription.js');
+
+require('source-map-support').install();
 
 describe('AncientSouls/Graph', function () {
   var generateGraph = function generateGraph() {
@@ -19,5 +23,7 @@ describe('AncientSouls/Graph', function () {
   (0, _complete.CompleteTest)(generateGraph, [1, 2, 3]);
   (0, _incomplete.IncompleteTest)(generateGraph, [1, 2, 3]);
   (0, _empty.EmptyTest)(generateGraph, [1, 2]);
+  (0, _hyper.HyperTest)(generateGraph, [1, 2, 3]);
   (0, _subscription.SubscriptionTest)(generateGraph, [1, 2, 3]);
 });
+//# sourceMappingURL=index.js.map
