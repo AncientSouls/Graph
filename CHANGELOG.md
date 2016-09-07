@@ -1,4 +1,4 @@
-#### 0.0.18 (2016-9-5)
+#### 0.0.19 (2016-9-7)
 
 ##### Documentation Changes
 
@@ -41,6 +41,10 @@
 * **compile:** Remove old compiled files. Need to automate these processes... ([bf4a2fd8](https://github.com/AncientSouls/Graph/commit/bf4a2fd80936ce0befa6a3a0b9e3ab9fde978eed))
 * **tests:** Added before preparation. ([ddc15d01](https://github.com/AncientSouls/Graph/commit/ddc15d014b711dcd6d53fd967d865270af00983b))
 * **npm:** Move chai and mocha into main dependencies It is necessary to run tests from other packages. ([10021b6b](https://github.com/AncientSouls/Graph/commit/10021b6bdd03b27ebdfbcbd8a9b2cc11db72710b))
+
+##### Other Changes
+
+* **adapter:** _idGenerator && _insertModifier && _updateModifier && skip && limit && sort ([6260cc68](https://github.com/AncientSouls/Graph/commit/6260cc68a56101fe54f357b25a9a49d7b7ce2ec9))
 
 ##### Refactors
 
