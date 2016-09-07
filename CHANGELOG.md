@@ -1,7 +1,12 @@
-#### 0.0.19 (2016-9-7)
+#### 0.0.20 (2016-9-7)
 
 ##### Documentation Changes
 
+* **jsdoc:**
+  * id, source, target can be string|number|string[]|number[] ([f96ac674](https://github.com/AncientSouls/Graph/commit/f96ac674518324043c697cdfe8cfb92caf689ebe))
+  * Import description. ([36500b82](https://github.com/AncientSouls/Graph/commit/36500b82ce3eb3ec544409c14523e90f9893aab2))
+  * ObjectGraph is inherited class. ([d9ca0859](https://github.com/AncientSouls/Graph/commit/d9ca08592226dcb216af2cccd4489385f785c9cf))
+  * ObjectGraph support and jsdoc.json enhanced ([137cb3fd](https://github.com/AncientSouls/Graph/commit/137cb3fd7b00104bbfc22f2b1a04ce78ad84b1bc))
 * **readme:**
   * Update import. ([7406f96d](https://github.com/AncientSouls/Graph/commit/7406f96d96769feb63a6a45d3fc064ae1bd247af))
   * Fix readme and logic ([092920c8](https://github.com/AncientSouls/Graph/commit/092920c8e004773996a4bfb4350b256d66d7f145))
@@ -9,13 +14,10 @@
   * new beautifuls ([ad11882c](https://github.com/AncientSouls/Graph/commit/ad11882c9ecd4ae7e7ff2f5600f8c03425f3c91f))
   * little console.log fix ([7490e13d](https://github.com/AncientSouls/Graph/commit/7490e13d081764965f508353ec16e9c02ad86bb0))
   * new format for code and comments ([8ebebed3](https://github.com/AncientSouls/Graph/commit/8ebebed35690e18e9e1f90eb6b9f09a93a6d7126))
-* **jsdoc:**
-  * Import description. ([36500b82](https://github.com/AncientSouls/Graph/commit/36500b82ce3eb3ec544409c14523e90f9893aab2))
-  * ObjectGraph is inherited class. ([d9ca0859](https://github.com/AncientSouls/Graph/commit/d9ca08592226dcb216af2cccd4489385f785c9cf))
-  * ObjectGraph support and jsdoc.json enhanced ([137cb3fd](https://github.com/AncientSouls/Graph/commit/137cb3fd7b00104bbfc22f2b1a04ce78ad84b1bc))
 
 ##### New Features
 
+* **graph:** Hipergraphs. Support for multiple values in selectors and modifiers. ([4b36d2c0](https://github.com/AncientSouls/Graph/commit/4b36d2c036a07d5e97fc144d2dfafcf4f71b11ef))
 * **adapter:** idGenerator for custom ids in links ([84e0e60e](https://github.com/AncientSouls/Graph/commit/84e0e60eb8f71a6da60384694e8ae47e48e9d5a5))
 * **git:** Move doc into submodule ([451b6420](https://github.com/AncientSouls/Graph/commit/451b6420bd5c1a29f6ad0b4f204c7b9ad5898c97))
 * **scripts:** npm run compile && npm test && npm publish && npm run cleaning && git push ([2fb0c6cb](https://github.com/AncientSouls/Graph/commit/2fb0c6cbf453bee859b30cfe616f402b91520b36))
@@ -49,4 +51,3 @@
 ##### Refactors
 
 * **export:** Export in separate line. ([007ba44f](https://github.com/AncientSouls/Graph/commit/007ba44f2fba8032eafc0b837910f4de2d15692e))
-
