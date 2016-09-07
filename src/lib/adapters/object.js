@@ -31,7 +31,7 @@ class ObjectGraph extends AncientGraph {
    * 
    * @param {number} index
    * @param {Link} link
-   * @return {string} id;
+   * @return {number|string} id;
    */
   _idGenerator(index, link) {
     return ""+index;
@@ -42,7 +42,7 @@ class ObjectGraph extends AncientGraph {
    * 
    * @param {number} index
    * @param {Link} link
-   * @return {string} id;
+   * @return {number|string} id;
    */
   _insertModifier(link) {
     var _modifier = {};
@@ -60,7 +60,7 @@ class ObjectGraph extends AncientGraph {
    * 
    * @param {Link} link
    * @param {Graph~insertCallback} [callback]
-   * @return {string} [id]
+   * @return {number|string} [id]
    */
   insert(link, callback) {
     this.callback
@@ -86,7 +86,7 @@ class ObjectGraph extends AncientGraph {
    *
    * @callback Graph~insertCallback
    * @param {Error} [error]
-   * @param {string} [id]
+   * @param {number|string} [id]
    */
   
   /**
@@ -94,7 +94,7 @@ class ObjectGraph extends AncientGraph {
    * 
    * @param {number} index
    * @param {Link} link
-   * @return {string} id;
+   * @return {number|string} id;
    */
   _updateModifier(modifier, result) {
     for (var m in modifier) {

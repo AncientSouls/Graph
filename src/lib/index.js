@@ -14,18 +14,21 @@ export { Graph, ObjectGraph };
  * Ignored when inserting.
  *
  * @name Link#id
+ * @type {string|number}
  */
 
 /**
  * Some reference to source. Can be undefined.
  *
  * @name Link#source
+ * @type {string|number|string[]|number[]}
  */
 
 /**
  * Some reference to target. Can be undefined.
  *
  * @name Link#target
+ * @type {string|number|string[]|number[]}
  */
 
 /**
@@ -41,18 +44,21 @@ export { Graph, ObjectGraph };
  * Unique id of link in this graph.
  *
  * @name LinkSelector#id
+ * @type {string|number}
  */
 
 /**
  * Some reference to source.
  *
  * @name LinkSelector#source
+ * @type {string|number|string[]|number[]}
  */
 
 /**
  * Some reference to target.
  *
  * @name LinkSelector#target
+ * @type {string|number|string[]|number[]}
  */
 
 /**
@@ -68,12 +74,14 @@ export { Graph, ObjectGraph };
  * Some reference to source.
  *
  * @name LinkModifier#source
+ * @type {string|number|string[]|number[]}
  */
 
 /**
  * Some reference to target.
  *
  * @name LinkModifier#target
+ * @type {string|number|string[]|number[]}
  */
 
 /**
