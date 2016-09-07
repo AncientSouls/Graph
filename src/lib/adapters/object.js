@@ -3,17 +3,6 @@ import lodash from 'lodash';
 import { EventEmitter } from 'fbemitter';
 
 /**
- * Id generator. By default based on index in array.
- * 
- * @param {number} index
- * @param {Link} link
- * @return {string} id;
- */
-var defaultIdGenerator = function(index, link) {
-  return ""+index;
-};
-
-/**
  * Inherited class. Class with methods for control links in graph.
  * Adapted for array collection.
  * 
@@ -28,25 +17,42 @@ class ObjectGraph extends AncientGraph {
    * @param {Object} fields - matching of fields in the link with fields in document
    * @param {string} fields.source
    * @param {string} fields.target
-   * @param {Graph~constructorIdGenerator} [idGenerator]
    * @throws {Error} if the adapter methods is not complete
    */
-  constructor(collection, fields, idGenerator) {
+  constructor(collection, fields) {
     super();
     this.collection = collection;
     this.fields = fields;
-    this.idGenerator = idGenerator?idGenerator:defaultIdGenerator
     this.emitter = new EventEmitter();
   }
   
   /**
-   * Optional idGenerator. If present, override defaultIdGenerator.
-   *
-   * @callback Graph~constructorIdGenerator
+   * Specifies the id field on insert
+   * 
    * @param {number} index
    * @param {Link} link
    * @return {string} id;
    */
+  _idGenerator(index, link) {
+    return ""+index;
+  };
+  
+  /**
+   * Generate insert modifier.
+   * 
+   * @param {number} index
+   * @param {Link} link
+   * @return {string} id;
+   */
+  _insertModifier(link) {
+    var _modifier = {};
+    for (var f in link) {
+      if (this.fields[f]) {
+        _modifier[this.fields[f]] = link[f];
+      }
+    }
+    return _modifier;
+  };
   
   /**
    * Should insert new link into graph.
@@ -58,17 +64,12 @@ class ObjectGraph extends AncientGraph {
    */
   insert(link, callback) {
     this.callback
-    var _modifier = {};
-    for (var f in link) {
-      if (this.fields[f]) {
-        _modifier[this.fields[f]] = link[f];
-      }
-    }
+    var _modifier = this._insertModifier(link);
     var index, error, id;
     try {
       index = this.collection.push(_modifier) - 1;
       if (!this.collection[index].hasOwnProperty(this.fields['id'])) {
-        id = this.collection[index][this.fields['id']] = this.idGenerator(index, this.collection[index]);
+        id = this.collection[index][this.fields['id']] = this._idGenerator(index, this.collection[index]);
       }
       this.emitter.emit('insert', this.collection[index]);
     } catch(_error) {
@@ -89,6 +90,25 @@ class ObjectGraph extends AncientGraph {
    */
   
   /**
+   * Generate update modifier.
+   * 
+   * @param {number} index
+   * @param {Link} link
+   * @return {string} id;
+   */
+  _updateModifier(modifier, result) {
+    for (var m in modifier) {
+      if (this.fields[m]) {
+        if (typeof(modifier[m]) == 'undefined') {
+          delete result[this.fields[m]];
+        } else {
+          result[this.fields[m]] = modifier[m];
+        }
+      }
+    }
+  };
+  
+  /**
    * Should update to new state of modifier object link by unique id or by link query object.
    * If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.
    * 
@@ -101,15 +121,7 @@ class ObjectGraph extends AncientGraph {
     var results = this._fetch(selector);
     for (var r in results) {
       var oldResult = lodash.cloneDeep(results[r]);
-      for (var m in modifier) {
-        if (this.fields[m]) {
-          if (typeof(modifier[m]) == 'undefined') {
-            delete results[r][this.fields[m]];
-          } else {
-            results[r][this.fields[m]] = modifier[m];
-          }
-        }
-      }
+      this._updateModifier(modifier, results[r]);
       this.emitter.emit('update', results[r], oldResult);
     }
     if (callback) callback(undefined, results.length);
@@ -190,10 +202,11 @@ class ObjectGraph extends AncientGraph {
     var _options = {};
     if (options) {
       if (options.sort) {
-        _options.sort = [];
+        _options.sort = { keys: [], orders: [] };
         for (var s in options.sort) {
           if (this.fields[s]) {
-            _options.sort.push([this.fields[s], options.sort[s]]);
+            _options.sort.keys.push(this.fields[s]);
+            _options.sort.orders.push(options.sort[s]?'asc':'desc');
           }
         }
       }
@@ -233,11 +246,11 @@ class ObjectGraph extends AncientGraph {
   _fetch(selector, options) {
     var query = this.query(selector);
     var documents = lodash.filter(this.collection, query); 
-    // var _options = this.options(options);
-    // if (_options.sort) chain = chain.compoundsort(_options.sort);
-    // if (_options.skip) chain = chain.offset(_options.skip);
-    // if (_options.limit) chain = chain.limit(_options.limit);
-    // return chain.data();
+    var _options = this.options(options);
+    if (_options.sort) documents = lodash.orderBy(documents, _options.sort.keys, _options.orders);
+    var skip = _options.skip?_options.skip:0;
+    var limit = _options.limit?skip+_options.limit:_options.limit;
+    documents = documents.slice(skip, limit);
     return documents;
   }
   
