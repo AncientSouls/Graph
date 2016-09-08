@@ -6,6 +6,10 @@
  */
 function factoryGraph(ParentClass) {
   
+  if (!ParentClass) {
+    var ParentClass = class {}
+  }
+  
   /**
    * Class to inherit. Class with methods for control links in graph.
    * Must be completed for adaptation to a particular database.
@@ -13,13 +17,14 @@ function factoryGraph(ParentClass) {
    * @class
    * @description `import { Graph } from 'ancient-graph';`
    */
-  class Graph {
+  class Graph extends ParentClass {
     
     /**
      * Construct new graph and checks for required adaptation methods.
      * @throws {Error} if the adapter methods is not complete
      */
     constructor() {
+      super(...arguments);
       if (this.insert == Graph.prototype.insert) {
         throw new Error('Method `insert` is not adapted.');
       }
