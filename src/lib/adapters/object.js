@@ -60,9 +60,10 @@ class ObjectGraph extends AncientGraph {
    * 
    * @param {Link} link
    * @param {Graph~insertCallback} [callback]
+   * @param {Object} [context]
    * @return {number|string} [id]
    */
-  insert(link, callback) {
+  insert(link, callback, context) {
     this.callback
     var _modifier = this._insertModifier(link);
     var index, error, id;
@@ -183,9 +184,10 @@ class ObjectGraph extends AncientGraph {
    * @param {string|LinkSelector} selector
    * @param {LinkModifier} modifier
    * @param {Graph~updateCallback} [callback]
+   * @param {Object} [context]
    * @return {number} [count]
    */
-  update(selector, modifier, callback) {
+  update(selector, modifier, callback, context) {
     var results = this._fetch(selector);
     for (var r in results) {
       var oldResult = lodash.cloneDeep(results[r]);
@@ -209,8 +211,9 @@ class ObjectGraph extends AncientGraph {
    * 
    * @param {string|LinkSelector} selector
    * @param {Graph~removeCallback} [callback]
+   * @param {Object} [context]
    */
-  remove(selector, callback) {
+  remove(selector, callback, context) {
     var oldLength = this.collection.length;
     var removed = [];
     lodash.remove(this.collection, (result) => {

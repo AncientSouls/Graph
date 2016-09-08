@@ -47,9 +47,10 @@ class Graph {
    * 
    * @param {Link} link
    * @param {Graph~insertCallback} [callback]
+   * @param {Object} [context]
    * @return {string} [id]
    */
-  insert(link, callback) {}
+  insert(link, callback, context) {}
   
   /**
    * Optional callback. If present, called with an error object as the first argument and, if no error, the unique id of inserted link as the second.
@@ -66,9 +67,10 @@ class Graph {
    * @param {string|LinkSelector} selector
    * @param {LinkModifier} modifier
    * @param {Graph~updateCallback} [callback]
+   * @param {Object} [context]
    * @return {number} [count]
    */
-  update(selector, modifier, callback) {}
+  update(selector, modifier, callback, context) {}
   
   /**
    * Optional callback. If present, called with an error object as the first argument and, if no error, the number of affected documents as the second.
@@ -83,8 +85,9 @@ class Graph {
    * 
    * @param {string|LinkSelector} selector
    * @param {Graph~removeCallback} [callback]
+   * @param {Object} [context]
    */
-  remove(selector, callback) {}
+  remove(selector, callback, context) {}
   
   /**
    * Optional callback. If present, called with an error object as the first argument.
