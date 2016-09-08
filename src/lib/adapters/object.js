@@ -90,6 +90,53 @@ class ObjectGraph extends AncientGraph {
    */
   
   /**
+   * Push into link value some item/items.
+   * 
+   * @param {Array} data
+   * @param {string|number|string[]|number[]} item
+   */
+  _updateModifierPush(data, item) {
+    data.push(item);
+  }
+  
+  /**
+   * Push into link value some item/items if not already exists.
+   * 
+   * @param {Array} data
+   * @param {string|number|string[]|number[]} item
+   */
+  _updateModifierAdd(data, item) {
+    if (lodash.isArray(item)) {
+      for (var i in item) {
+        this._updateModifierAdd(data, item[i]);
+      }
+    } else {
+      var index = lodash.indexOf(data, item);
+      if (index < 0) {
+        this._updateModifierPush(data, item);
+      }
+    }
+  }
+   
+  /**
+   * Remove from link value some item/items.
+   * 
+   * @param {Array} data
+   * @param {string|number|string[]|number[]} item
+   */
+  _updateModifierRemove(data, item) {
+    if (lodash.isArray(item)) {
+      for (var i in item) {
+        this._updateModifierRemove(data, item[i]);
+      }
+    } else {
+      lodash.remove(data, function(value) {
+        return value == item;
+      });
+    }
+  }
+
+  /**
    * Generate update modifier.
    * 
    * @param {number} index
@@ -102,7 +149,28 @@ class ObjectGraph extends AncientGraph {
         if (typeof(modifier[m]) == 'undefined') {
           delete result[this.fields[m]];
         } else {
-          result[this.fields[m]] = modifier[m];
+          if (typeof(modifier[m]) == 'object') {
+            if (lodash.isArray(modifier[m])) {
+              result[this.fields[m]] = modifier[m];
+            } else {
+              if (!lodash.isArray(result[this.fields[m]])) {
+                result[this.fields[m]] = [result[this.fields[m]]];
+              }
+              for (var key in modifier[m]) {
+                if (key == 'add') {
+                  this._updateModifierAdd(result[this.fields[m]], modifier[m][key]);
+                }
+                if (key == 'push') {
+                  this._updateModifierPush(result[this.fields[m]], modifier[m][key]);
+                }
+                if (key == 'remove') {
+                  this._updateModifierRemove(result[this.fields[m]], modifier[m][key]);
+                }
+              }
+            }
+          } else {
+            result[this.fields[m]] = modifier[m];
+          }
         }
       }
     }

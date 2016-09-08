@@ -133,6 +133,7 @@ lodash.filter(collection, graph.query({source: 1}));
 ### Hypergraph
 
 There is support for hypergraphs's links. This means that the value can be an array.
+
 When searching for an array of uses nonstrict matching.
 
 ```js
@@ -152,6 +153,19 @@ graph.fetch({ source: 2 });
  *   {id: 2, source: 2},
  * ]
  */ 
+```
+
+There are also operators for working with arrays.
+
+```js
+graph.insert({ source: [1, 2, 3] });
+graph.update({ source: 2 }, { source: { add: [4, 2], remove: 1, push: [3] } });
+graph.fetch({ source: 2 });
+/**
+ * [
+ *   {id: 1, source: [2, 3, 4, 3]},
+ * ]
+ */
 ```
 
 ## Sync and Async

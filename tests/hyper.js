@@ -33,14 +33,14 @@ function HyperTest(generateGraph, ids) {
         graph.fetch(id1, undefined, function (error, links) {
           _chai.assert.lengthOf(links, 1);
           _chai.assert.deepEqual(links[0], { id: id1, source: [ids[0], ids[1], ids[2]], target: [ids[0]] });
-          graph.update(id1, { source: [ids[0], ids[2]] }, function (error, count) {
+          graph.update(id1, { source: { remove: ids[1] } }, function (error, count) {
             _chai.assert.ifError(error);
             _chai.assert.equal(count, 1);
             graph.fetch({ source: [ids[2]] }, undefined, function (error, links) {
               _chai.assert.ifError(error);
               _chai.assert.lengthOf(links, 1);
               _chai.assert.deepEqual(links[0], { id: id1, source: [ids[0], ids[2]], target: [ids[0]] });
-              graph.update({ source: ids[2] }, { target: [ids[1]] }, function (error, count) {
+              graph.update({ source: ids[2] }, { target: { remove: ids[0], add: ids[1] } }, function (error, count) {
                 _chai.assert.ifError(error);
                 _chai.assert.equal(count, 1);
                 graph.fetch({ target: ids[1] }, undefined, function (error, links) {

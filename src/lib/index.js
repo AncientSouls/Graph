@@ -74,14 +74,45 @@ export { Graph, ObjectGraph };
  * Some reference to source.
  *
  * @name LinkModifier#source
- * @type {string|number|string[]|number[]}
+ * @type {string|number|string[]|number[]|LinkArrayModifier}
  */
 
 /**
  * Some reference to target.
  *
  * @name LinkModifier#target
+ * @type {string|number|string[]|number[]||LinkArrayModifier}
+ */
+
+/**
+ * Interface for link array value modification.
+ * If used, it automatically turns all the data in the array.
+ *
+ * @interface LinkArrayModifier
+ */
+
+/**
+ * Push into link value some item/items.
+ *
+ * @name LinkArrayModifier#push
  * @type {string|number|string[]|number[]}
+ * @description These modifiers are identical: `{ source: { push: 1 } }` and `{ source: { push: [1] } }`.
+ */
+
+/**
+ * Push into link value some item/items if not already exists.
+ *
+ * @name LinkArrayModifier#add
+ * @type {string|number|string[]|number[]}
+ * @description These modifiers are identical: `{ source: { add: 1 } }` and `{ source: { add: [1] } }`.
+ */
+
+/**
+ * Remove from link value some item/items.
+ *
+ * @name LinkArrayModifier#remove
+ * @type {string|number|string[]|number[]}
+ * @description These modifiers are identical: `{ source: { remove: 1 } }` and `{ source: { remove: [1] } }`.
  */
 
 /**
