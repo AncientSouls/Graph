@@ -139,8 +139,8 @@ class ObjectGraph extends AncientGraph {
   /**
    * Generate update modifier.
    * 
-   * @param {number} index
-   * @param {Link} link
+   * @param {LinkModifier} modifier 
+   * @param {Object} result
    * @return {number|string} id;
    */
   _updateModifier(modifier, result) {
