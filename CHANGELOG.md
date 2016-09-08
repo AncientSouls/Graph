@@ -1,4 +1,4 @@
-#### 0.0.20 (2016-9-7)
+#### 0.0.21 (2016-9-8)
 
 ##### Documentation Changes
 
@@ -17,7 +17,9 @@
 
 ##### New Features
 
-* **graph:** Hipergraphs. Support for multiple values in selectors and modifiers. ([4b36d2c0](https://github.com/AncientSouls/Graph/commit/4b36d2c036a07d5e97fc144d2dfafcf4f71b11ef))
+* **graph:**
+  * array push, add, remove operators ([1013834b](https://github.com/AncientSouls/Graph/commit/1013834b8356794504fd2bed9416c3ce500f03df))
+  * Hipergraphs. Support for multiple values in selectors and modifiers. ([4b36d2c0](https://github.com/AncientSouls/Graph/commit/4b36d2c036a07d5e97fc144d2dfafcf4f71b11ef))
 * **adapter:** idGenerator for custom ids in links ([84e0e60e](https://github.com/AncientSouls/Graph/commit/84e0e60eb8f71a6da60384694e8ae47e48e9d5a5))
 * **git:** Move doc into submodule ([451b6420](https://github.com/AncientSouls/Graph/commit/451b6420bd5c1a29f6ad0b4f204c7b9ad5898c97))
 * **scripts:** npm run compile && npm test && npm publish && npm run cleaning && git push ([2fb0c6cb](https://github.com/AncientSouls/Graph/commit/2fb0c6cbf453bee859b30cfe616f402b91520b36))
@@ -51,3 +53,4 @@
 ##### Refactors
 
 * **export:** Export in separate line. ([007ba44f](https://github.com/AncientSouls/Graph/commit/007ba44f2fba8032eafc0b837910f4de2d15692e))
+
