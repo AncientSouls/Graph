@@ -1,4 +1,4 @@
-#### 0.0.21 (2016-9-8)
+#### 0.0.22 (2016-9-8)
 
 ##### Documentation Changes
 
@@ -18,6 +18,7 @@
 ##### New Features
 
 * **graph:**
+  * last argument context for custom user data ([9e24adf2](https://github.com/AncientSouls/Graph/commit/9e24adf279f5009090e49d4c5069c3fee1ba50ab))
   * array push, add, remove operators ([1013834b](https://github.com/AncientSouls/Graph/commit/1013834b8356794504fd2bed9416c3ce500f03df))
   * Hipergraphs. Support for multiple values in selectors and modifiers. ([4b36d2c0](https://github.com/AncientSouls/Graph/commit/4b36d2c036a07d5e97fc144d2dfafcf4f71b11ef))
 * **adapter:** idGenerator for custom ids in links ([84e0e60e](https://github.com/AncientSouls/Graph/commit/84e0e60eb8f71a6da60384694e8ae47e48e9d5a5))
@@ -27,6 +28,11 @@
 
 ##### Bug Fixes
 
+* **jsdoc:**
+  * arguments ([e829c1a2](https://github.com/AncientSouls/Graph/commit/e829c1a251bb459123c172c2416c5b327a303d6f))
+  * syntax ([8792bdc3](https://github.com/AncientSouls/Graph/commit/8792bdc3cd4be3d5e1eb95281e76401f5a6ba6d4))
+  * Restore jsdoc.conf.json file. ([7e358b54](https://github.com/AncientSouls/Graph/commit/7e358b540f384d19be8e414eac6437352a50e75d))
+  * Move jsdoc settings into gh-pages branch. ([a479f12c](https://github.com/AncientSouls/Graph/commit/a479f12cc2c57dd26ee76030141b70b4fdc3d40c))
 * **adapter:**
   * remove event only if removed... ([7f1f8bc9](https://github.com/AncientSouls/Graph/commit/7f1f8bc904c46573155cb753a7e5b719d32fbeae))
   * remove event only after removing ([b3c96e78](https://github.com/AncientSouls/Graph/commit/b3c96e786e0c74855c340f822117eebea26db7c7))
@@ -39,9 +45,6 @@
   * submodule branch checkout ([05aa2dac](https://github.com/AncientSouls/Graph/commit/05aa2dacb316cd2b812ac64b451bfa872dcaa410))
   * Add to jsdoc script submodule update. ([b662e463](https://github.com/AncientSouls/Graph/commit/b662e463dcf5835bdba2595191972fdf41ef9a75))
   * from path to bin names ([59f4b469](https://github.com/AncientSouls/Graph/commit/59f4b469377140ead35112d359b750e61182d573))
-* **jsdoc:**
-  * Restore jsdoc.conf.json file. ([7e358b54](https://github.com/AncientSouls/Graph/commit/7e358b540f384d19be8e414eac6437352a50e75d))
-  * Move jsdoc settings into gh-pages branch. ([a479f12c](https://github.com/AncientSouls/Graph/commit/a479f12cc2c57dd26ee76030141b70b4fdc3d40c))
 * **compile:** Remove old compiled files. Need to automate these processes... ([bf4a2fd8](https://github.com/AncientSouls/Graph/commit/bf4a2fd80936ce0befa6a3a0b9e3ab9fde978eed))
 * **tests:** Added before preparation. ([ddc15d01](https://github.com/AncientSouls/Graph/commit/ddc15d014b711dcd6d53fd967d865270af00983b))
 * **npm:** Move chai and mocha into main dependencies It is necessary to run tests from other packages. ([10021b6b](https://github.com/AncientSouls/Graph/commit/10021b6bdd03b27ebdfbcbd8a9b2cc11db72710b))
