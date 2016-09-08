@@ -1,4 +1,4 @@
-#### 0.0.24 (2016-9-8)
+#### 0.0.25 (2016-9-8)
 
 ##### Documentation Changes
 
@@ -18,6 +18,7 @@
 ##### New Features
 
 * **graph:**
+  * factory for custom class construction ([2a25d0d4](https://github.com/AncientSouls/Graph/commit/2a25d0d4106e65a135ce381e7be45106a9c471b7))
   * last argument context for custom user data ([9e24adf2](https://github.com/AncientSouls/Graph/commit/9e24adf279f5009090e49d4c5069c3fee1ba50ab))
   * array push, add, remove operators ([1013834b](https://github.com/AncientSouls/Graph/commit/1013834b8356794504fd2bed9416c3ce500f03df))
   * Hipergraphs. Support for multiple values in selectors and modifiers. ([4b36d2c0](https://github.com/AncientSouls/Graph/commit/4b36d2c036a07d5e97fc144d2dfafcf4f71b11ef))
