@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#_idGenerator">_idGenerator</a></li><li data-type='method'><a href="ObjectGraph.html#_insertModifier">_insertModifier</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifier">_updateModifier</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#_idGenerator">_idGenerator</a></li><li data-type='method'><a href="ObjectGraph.html#_insertModifier">_insertModifier</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifier">_updateModifier</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierAdd">_updateModifierAdd</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierPush">_updateModifierPush</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierRemove">_updateModifierRemove</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkArrayModifier.html">LinkArrayModifier</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul>
 </nav>
 
 <div id="main">
@@ -130,6 +130,53 @@ class ObjectGraph extends AncientGraph {
    */
   
   /**
+   * Push into link value some item/items.
+   * 
+   * @param {Array} data
+   * @param {string|number|string[]|number[]} item
+   */
+  _updateModifierPush(data, item) {
+    data.push(item);
+  }
+  
+  /**
+   * Push into link value some item/items if not already exists.
+   * 
+   * @param {Array} data
+   * @param {string|number|string[]|number[]} item
+   */
+  _updateModifierAdd(data, item) {
+    if (lodash.isArray(item)) {
+      for (var i in item) {
+        this._updateModifierAdd(data, item[i]);
+      }
+    } else {
+      var index = lodash.indexOf(data, item);
+      if (index &lt; 0) {
+        this._updateModifierPush(data, item);
+      }
+    }
+  }
+   
+  /**
+   * Remove from link value some item/items.
+   * 
+   * @param {Array} data
+   * @param {string|number|string[]|number[]} item
+   */
+  _updateModifierRemove(data, item) {
+    if (lodash.isArray(item)) {
+      for (var i in item) {
+        this._updateModifierRemove(data, item[i]);
+      }
+    } else {
+      lodash.remove(data, function(value) {
+        return value == item;
+      });
+    }
+  }
+
+  /**
    * Generate update modifier.
    * 
    * @param {number} index
@@ -142,7 +189,28 @@ class ObjectGraph extends AncientGraph {
         if (typeof(modifier[m]) == 'undefined') {
           delete result[this.fields[m]];
         } else {
-          result[this.fields[m]] = modifier[m];
+          if (typeof(modifier[m]) == 'object') {
+            if (lodash.isArray(modifier[m])) {
+              result[this.fields[m]] = modifier[m];
+            } else {
+              if (!lodash.isArray(result[this.fields[m]])) {
+                result[this.fields[m]] = [result[this.fields[m]]];
+              }
+              for (var key in modifier[m]) {
+                if (key == 'add') {
+                  this._updateModifierAdd(result[this.fields[m]], modifier[m][key]);
+                }
+                if (key == 'push') {
+                  this._updateModifierPush(result[this.fields[m]], modifier[m][key]);
+                }
+                if (key == 'remove') {
+                  this._updateModifierRemove(result[this.fields[m]], modifier[m][key]);
+                }
+              }
+            }
+          } else {
+            result[this.fields[m]] = modifier[m];
+          }
         }
       }
     }
@@ -432,7 +500,7 @@ export { ObjectGraph as Graph };</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Sep 07 2016 07:30:16 GMT+0000 (UTC) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 08 2016 04:18:57 GMT+0000 (UTC) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>LinkModifier - Documentation</title>
+    <title>LinkArrayModifier - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">LinkModifier</h1>
+    <h1 class="page-title">LinkArrayModifier</h1>
     
 
     
@@ -41,7 +41,7 @@
 <header>
     
         <h2>
-        LinkModifier
+        LinkArrayModifier
         </h2>
         
     
@@ -51,10 +51,8 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Interface for links modification.
-Valid any keys and values, if adaptation methods was able to work with them.
-To delete some value, just specify it value as undefined.
-Not specified keys will not participate in the links modification.</p></div>
+            <div class="description"><p>Interface for link array value modification.
+If used, it automatically turns all the data in the array.</p></div>
         
 
         
@@ -89,7 +87,7 @@ Not specified keys will not participate in the links modification.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line64">line 64</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -120,13 +118,13 @@ Not specified keys will not participate in the links modification.</p></div>
 
         
             
-<h4 class="name" id="source"><span class="type-signature"></span>source<span class="type-signature"> :string|number|Array.&lt;string>|Array.&lt;number>|<a href="LinkArrayModifier.html">LinkArrayModifier</a></span></h4>
+<h4 class="name" id="add"><span class="type-signature"></span>add<span class="type-signature"> :string|number|Array.&lt;string>|Array.&lt;number></span></h4>
 
 
 
 
 <div class="description">
-    <p>Some reference to source.</p>
+    <p>These modifiers are identical: <code>{ source: { add: 1 } }</code> and <code>{ source: { add: [1] } }</code>.</p>
 </div>
 
 
@@ -145,9 +143,6 @@ Not specified keys will not participate in the links modification.</p></div>
 |
 
 <span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type"><a href="LinkArrayModifier.html">LinkArrayModifier</a></span>
 
 
         </li>
@@ -186,7 +181,7 @@ Not specified keys will not participate in the links modification.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line73">line 73</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line102">line 102</a>
     </li></ul></dd>
     
 
@@ -204,13 +199,13 @@ Not specified keys will not participate in the links modification.</p></div>
 
         
             
-<h4 class="name" id="target"><span class="type-signature"></span>target<span class="type-signature"> :string|number|Array.&lt;string>|Array.&lt;number>|<a href="LinkArrayModifier.html">LinkArrayModifier</a></span></h4>
+<h4 class="name" id="push"><span class="type-signature"></span>push<span class="type-signature"> :string|number|Array.&lt;string>|Array.&lt;number></span></h4>
 
 
 
 
 <div class="description">
-    <p>Some reference to target.</p>
+    <p>These modifiers are identical: <code>{ source: { push: 1 } }</code> and <code>{ source: { push: [1] } }</code>.</p>
 </div>
 
 
@@ -229,9 +224,6 @@ Not specified keys will not participate in the links modification.</p></div>
 |
 
 <span class="param-type">Array.&lt;number></span>
-|
-
-<span class="param-type"><a href="LinkArrayModifier.html">LinkArrayModifier</a></span>
 
 
         </li>
@@ -270,7 +262,88 @@ Not specified keys will not participate in the links modification.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line80">line 80</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="remove"><span class="type-signature"></span>remove<span class="type-signature"> :string|number|Array.&lt;string>|Array.&lt;number></span></h4>
+
+
+
+
+<div class="description">
+    <p>These modifiers are identical: <code>{ source: { remove: 1 } }</code> and <code>{ source: { remove: [1] } }</code>.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
+|
+
+<span class="param-type">Array.&lt;number></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line110">line 110</a>
     </li></ul></dd>
     
 
