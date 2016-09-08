@@ -1,4 +1,4 @@
-#### 0.0.25 (2016-9-8)
+#### 0.0.26 (2016-9-8)
 
 ##### Documentation Changes
 
@@ -29,6 +29,7 @@
 
 ##### Bug Fixes
 
+* **graph:** ParentClass for main Graph class ([6ce8044b](https://github.com/AncientSouls/Graph/commit/6ce8044b788b871a241eb59688687a8e8c26c801))
 * **adapter:**
   * empty array if empty field ([1bfcbe85](https://github.com/AncientSouls/Graph/commit/1bfcbe85e0993d97473508fbd85ac8cc2638280a))
   * remove event only if removed... ([7f1f8bc9](https://github.com/AncientSouls/Graph/commit/7f1f8bc904c46573155cb753a7e5b719d32fbeae))

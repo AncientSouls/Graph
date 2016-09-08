@@ -1,6 +1,6 @@
 {
   "name": "ancient-graph",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Graph methods and event handlers based on adapter.",
   "keywords": [
     "javascript",
