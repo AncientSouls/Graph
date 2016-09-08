@@ -155,7 +155,7 @@ class ObjectGraph extends AncientGraph {
               result[this.fields[m]] = modifier[m];
             } else {
               if (!lodash.isArray(result[this.fields[m]])) {
-                result[this.fields[m]] = [result[this.fields[m]]];
+                result[this.fields[m]] = result[this.fields[m]]?[result[this.fields[m]]]:[];
               }
               for (var key in modifier[m]) {
                 if (key == 'add') {
