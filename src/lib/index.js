@@ -81,7 +81,7 @@ export { Graph, ObjectGraph };
  * Some reference to target.
  *
  * @name LinkModifier#target
- * @type {string|number|string[]|number[]||LinkArrayModifier}
+ * @type {string|number|string[]|number[]|LinkArrayModifier}
  */
 
 /**
