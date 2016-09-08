@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Link - Documentation</title>
+    <title>Global - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,7 +28,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Link</h1>
+    <h1 class="page-title">Global</h1>
     
 
     
@@ -41,7 +41,7 @@
 <header>
     
         <h2>
-        Link
+        
         </h2>
         
     
@@ -50,9 +50,6 @@
 <article>
     <div class="container-overview">
     
-        
-            <div class="description"><p>Interface for link state representation.
-Valid any keys and values, if adaptation methods was able to work with them.</p></div>
         
 
         
@@ -84,11 +81,6 @@ Valid any keys and values, if adaptation methods was able to work with them.</p>
 
     
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line5">line 5</a>
-    </li></ul></dd>
     
 
     
@@ -114,34 +106,81 @@ Valid any keys and values, if adaptation methods was able to work with them.</p>
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         
             
-<h4 class="name" id="id"><span class="type-signature"></span>id<span class="type-signature"> :string|number</span></h4>
 
+    
+
+    <h4 class="name" id="factoryGraph"><span class="type-signature"></span>factoryGraph<span class="signature">(ParentClass)</span><span class="type-signature"> &rarr; {Class}</span></h4>
+
+    
 
 
 
 <div class="description">
-    <p>Unique id of link in this graph.
-Ignored when inserting.</p>
+    <p>This method allows you to use Graph class to its inheritance chain.</p>
 </div>
 
 
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
             
-<span class="param-type">string</span>
-|
+                <td class="name"><code>ParentClass</code></td>
+            
 
-<span class="param-type">number</span>
+            <td class="type">
+            
+                
+<span class="param-type">Class</span>
 
 
-        </li>
-    </ul>
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -176,7 +215,7 @@ Ignored when inserting.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line12">line 12</a>
+        <a href="graph.js.html">graph.js</a>, <a href="graph.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -192,37 +231,109 @@ Ignored when inserting.</p>
 
 
 
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
         
-            
-<h4 class="name" id="source"><span class="type-signature"></span>source<span class="type-signature"> :string|number|Array.&lt;string>|Array.&lt;number></span></h4>
-
-
-
-
-<div class="description">
-    <p>Some reference to source. Can be undefined.</p>
+<div class="param-desc">
+    <p>Graph</p>
 </div>
 
 
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Class</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
             
-<span class="param-type">string</span>
-|
 
-<span class="param-type">number</span>
-|
+    
 
-<span class="param-type">Array.&lt;string></span>
-|
+    <h4 class="name" id="factoryObjectGraph"><span class="type-signature"></span>factoryObjectGraph<span class="signature">(ParentClassGraph)</span><span class="type-signature"> &rarr; {Class}</span></h4>
 
-<span class="param-type">Array.&lt;number></span>
+    
 
 
-        </li>
-    </ul>
+
+<div class="description">
+    <p>This method allows you to use ObjectGraph class to its inheritance chain.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ParentClassGraph</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Class</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -257,7 +368,7 @@ Ignored when inserting.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line20">line 20</a>
+        <a href="adapters_object.js.html">adapters/object.js</a>, <a href="adapters_object.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -273,90 +384,39 @@ Ignored when inserting.</p>
 
 
 
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
         
-            
-<h4 class="name" id="target"><span class="type-signature"></span>target<span class="type-signature"> :string|number|Array.&lt;string>|Array.&lt;number></span></h4>
-
-
-
-
-<div class="description">
-    <p>Some reference to target. Can be undefined.</p>
+<div class="param-desc">
+    <p>ObjectGraph</p>
 </div>
 
 
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-|
-
-<span class="param-type">number</span>
-|
-
-<span class="param-type">Array.&lt;string></span>
-|
-
-<span class="param-type">Array.&lt;number></span>
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Class</span>
 
 
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
+    </dd>
 </dl>
 
-
-
+    
 
 
 
         
-    
-
     
 
     
