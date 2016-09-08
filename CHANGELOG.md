@@ -1,4 +1,4 @@
-#### 0.0.22 (2016-9-8)
+#### 0.0.24 (2016-9-8)
 
 ##### Documentation Changes
 
@@ -28,12 +28,8 @@
 
 ##### Bug Fixes
 
-* **jsdoc:**
-  * arguments ([e829c1a2](https://github.com/AncientSouls/Graph/commit/e829c1a251bb459123c172c2416c5b327a303d6f))
-  * syntax ([8792bdc3](https://github.com/AncientSouls/Graph/commit/8792bdc3cd4be3d5e1eb95281e76401f5a6ba6d4))
-  * Restore jsdoc.conf.json file. ([7e358b54](https://github.com/AncientSouls/Graph/commit/7e358b540f384d19be8e414eac6437352a50e75d))
-  * Move jsdoc settings into gh-pages branch. ([a479f12c](https://github.com/AncientSouls/Graph/commit/a479f12cc2c57dd26ee76030141b70b4fdc3d40c))
 * **adapter:**
+  * empty array if empty field ([1bfcbe85](https://github.com/AncientSouls/Graph/commit/1bfcbe85e0993d97473508fbd85ac8cc2638280a))
   * remove event only if removed... ([7f1f8bc9](https://github.com/AncientSouls/Graph/commit/7f1f8bc904c46573155cb753a7e5b719d32fbeae))
   * remove event only after removing ([b3c96e78](https://github.com/AncientSouls/Graph/commit/b3c96e786e0c74855c340f822117eebea26db7c7))
   * Catch undefined doc in array. ([9e9029ec](https://github.com/AncientSouls/Graph/commit/9e9029ecbbce38d94d042f90fdec8788a8b63e6e))
@@ -41,6 +37,11 @@
   * Move callback out from try/catch This led to catching the error inside the callback. ([56ee556c](https://github.com/AncientSouls/Graph/commit/56ee556c429cd0ad3b6914c9b2b46ff2528f0a36))
   * Cleaning and fix query by id result. ([4abf1129](https://github.com/AncientSouls/Graph/commit/4abf1129c8b28dc219b5da0b48936f4ee4eb760b))
   * Fix document to link generation. ([da90f46d](https://github.com/AncientSouls/Graph/commit/da90f46d762f9662036e56676e24ab44571d63b3))
+* **jsdoc:**
+  * arguments ([e829c1a2](https://github.com/AncientSouls/Graph/commit/e829c1a251bb459123c172c2416c5b327a303d6f))
+  * syntax ([8792bdc3](https://github.com/AncientSouls/Graph/commit/8792bdc3cd4be3d5e1eb95281e76401f5a6ba6d4))
+  * Restore jsdoc.conf.json file. ([7e358b54](https://github.com/AncientSouls/Graph/commit/7e358b540f384d19be8e414eac6437352a50e75d))
+  * Move jsdoc settings into gh-pages branch. ([a479f12c](https://github.com/AncientSouls/Graph/commit/a479f12cc2c57dd26ee76030141b70b4fdc3d40c))
 * **scripts:**
   * submodule branch checkout ([05aa2dac](https://github.com/AncientSouls/Graph/commit/05aa2dacb316cd2b812ac64b451bfa872dcaa410))
   * Add to jsdoc script submodule update. ([b662e463](https://github.com/AncientSouls/Graph/commit/b662e463dcf5835bdba2595191972fdf41ef9a75))
