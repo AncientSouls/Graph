@@ -1,4 +1,4 @@
-#### 0.0.26 (2016-9-8)
+#### 0.0.27 (2016-9-9)
 
 ##### Documentation Changes
 
@@ -18,6 +18,7 @@
 ##### New Features
 
 * **graph:**
+  * count method ([1747a4a8](https://github.com/AncientSouls/Graph/commit/1747a4a8eaef4584c2f48f792a5c35e89110d362))
   * factory for custom class construction ([2a25d0d4](https://github.com/AncientSouls/Graph/commit/2a25d0d4106e65a135ce381e7be45106a9c471b7))
   * last argument context for custom user data ([9e24adf2](https://github.com/AncientSouls/Graph/commit/9e24adf279f5009090e49d4c5069c3fee1ba50ab))
   * array push, add, remove operators ([1013834b](https://github.com/AncientSouls/Graph/commit/1013834b8356794504fd2bed9416c3ce500f03df))
