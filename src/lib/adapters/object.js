@@ -392,7 +392,7 @@ function factoryObjectGraph(ParentClassGraph) {
      */
     
     /**
-     * Should map callback over all matching documents. Returns an Array.
+     * Map callback over all matching documents. Returns an Array.
      * 
      * @param {string|LinkSelector} selector
      * @param {SelectOptions} [options]
@@ -408,6 +408,26 @@ function factoryObjectGraph(ParentClassGraph) {
      * @callback Graph~mapCallback
      * @param {Link} [link]
      * @return {*} result
+     */
+    
+    /**
+     * Count all matching documents.
+     * 
+     * @param {string|LinkSelector} selector
+     * @param {SelectOptions} [options]
+     * @param {Graph~countCallback} [callback]
+     * @return {number} count
+     */
+    count(selector, options, callback) {
+      var links = this.fetch(selector, options);
+      if (callback) callback(undefined, links.length);
+      return links.length;
+    }
+    
+    /**
+     * @callback Graph~countCallback
+     * @param {Error} [error]
+     * @param {number} [count]
      */
     
     /**

@@ -175,6 +175,22 @@ function factoryGraph(ParentClass) {
      */
     
     /**
+     * Should count all matching documents.
+     * 
+     * @param {string|LinkSelector} selector
+     * @param {SelectOptions} [options]
+     * @param {Graph~countCallback} [callback]
+     * @return {number} count
+     */
+    count(selector, options, callback) {}
+    
+    /**
+     * @callback Graph~countCallback
+     * @param {Error} [error]
+     * @param {number} [count]
+     */
+    
+    /**
      * Should subscribe to the events: link, unlink, insert, update, remove.
      * 
      * @param {string} event - name
