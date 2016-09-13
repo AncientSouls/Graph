@@ -334,7 +334,7 @@ function factoryObjectGraph(ParentClassGraph) {
      */
     get(selector, options, callback) {
       var results = this.fetch(selector, options, (error, results) => {
-        callback(error, results?results[0]:undefined);
+        if (callback) callback(error, results?results[0]:undefined);
       });
       if (results) return results[0];
     }
