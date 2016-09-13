@@ -325,6 +325,21 @@ function factoryObjectGraph(ParentClassGraph) {
     }
     
     /**
+     * Get one first matching link.
+     * 
+     * @param {string|LinkSelector} selector
+     * @param {SelectOptions} [options]
+     * @param {Graph~getCallback} [callback]
+     * @return {Link} link - result link object
+     */
+    get(selector, options, callback) {
+      var results = this.fetch(selector, options, (error, results) => {
+        callback(error, results?results[0]:undefined);
+      });
+      if (results) return results[0];
+    }
+    
+    /**
      * Fetch native database documents.
      * 
      * @param {string|linkSelector} selector

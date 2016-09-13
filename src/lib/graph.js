@@ -152,6 +152,24 @@ function factoryGraph(ParentClass) {
      */
     
     /**
+     * Get one first matching link.
+     * 
+     * @param {string|LinkSelector} selector
+     * @param {SelectOptions} [options]
+     * @param {Graph~getCallback} [callback]
+     * @return {Link} link - result link object
+     */
+    get(selector, options, callback) {}
+    
+    /**
+     * Optional callback. If present, called with an error object as the first argument and, if no error, the result link object.
+     *
+     * @callback Graph~getCallback
+     * @param {Error} [error]
+     * @param {Link} [link]
+     */
+    
+    /**
      * Should call callback once for each matching document, sequentially and synchronously.
      * 
      * @param {string|LinkSelector} selector
