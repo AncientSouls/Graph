@@ -1,4 +1,4 @@
-#### 0.0.28 (2016-9-13)
+#### 0.0.29 (2016-9-13)
 
 ##### Documentation Changes
 
@@ -32,8 +32,8 @@
 
 ##### Bug Fixes
 
-* **graph:** ParentClass for main Graph class ([6ce8044b](https://github.com/AncientSouls/Graph/commit/6ce8044b788b871a241eb59688687a8e8c26c801))
 * **adapter:**
+  * in get method callback is not defined ([401c7c14](https://github.com/AncientSouls/Graph/commit/401c7c143b6816e5d4ecd9bac8df91283b25ab1c))
   * empty array if empty field ([1bfcbe85](https://github.com/AncientSouls/Graph/commit/1bfcbe85e0993d97473508fbd85ac8cc2638280a))
   * remove event only if removed... ([7f1f8bc9](https://github.com/AncientSouls/Graph/commit/7f1f8bc904c46573155cb753a7e5b719d32fbeae))
   * remove event only after removing ([b3c96e78](https://github.com/AncientSouls/Graph/commit/b3c96e786e0c74855c340f822117eebea26db7c7))
@@ -42,6 +42,7 @@
   * Move callback out from try/catch This led to catching the error inside the callback. ([56ee556c](https://github.com/AncientSouls/Graph/commit/56ee556c429cd0ad3b6914c9b2b46ff2528f0a36))
   * Cleaning and fix query by id result. ([4abf1129](https://github.com/AncientSouls/Graph/commit/4abf1129c8b28dc219b5da0b48936f4ee4eb760b))
   * Fix document to link generation. ([da90f46d](https://github.com/AncientSouls/Graph/commit/da90f46d762f9662036e56676e24ab44571d63b3))
+* **graph:** ParentClass for main Graph class ([6ce8044b](https://github.com/AncientSouls/Graph/commit/6ce8044b788b871a241eb59688687a8e8c26c801))
 * **jsdoc:**
   * arguments ([e829c1a2](https://github.com/AncientSouls/Graph/commit/e829c1a251bb459123c172c2416c5b327a303d6f))
   * syntax ([8792bdc3](https://github.com/AncientSouls/Graph/commit/8792bdc3cd4be3d5e1eb95281e76401f5a6ba6d4))
