@@ -22,9 +22,16 @@ function factoryGraph(ParentClass) {
     /**
      * Construct new graph and checks for required adaptation methods.
      * @throws {Error} if the adapter methods is not complete
+     * 
+     * @param {} collection - A pointer to the collection dannymineobhodimye daapteru to work with the graph. This may be a connection to the SQL database and table name, for example, or a collection of Mongo. 
+     * @param {Object} fields - Comparison of the data in the collection of data in the graph. It is necessary for the adapter.
+     * @param {Object} [config] - Additional config.
      */
-    constructor() {
+    constructor(collection, fields, config) {
       super(...arguments);
+      this.collection = collection;
+      this.fields = fields;
+      this.config = config;
       if (this.insert == Graph.prototype.insert) {
         throw new Error('Method `insert` is not adapted.');
       }

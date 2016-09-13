@@ -21,15 +21,11 @@ function factoryObjectGraph(ParentClassGraph) {
     /**
      * Construct new graph and checks for required adaptation methods.
      * @param {Array[]} collection
-     * @param {Object} fields - matching of fields in the link with fields in document
-     * @param {string} fields.source
-     * @param {string} fields.target
+     * @param {Object.<string, string>} fields - matching of fields in the link with fields in document
      * @throws {Error} if the adapter methods is not complete
      */
-    constructor(collection, fields) {
-      super();
-      this.collection = collection;
-      this.fields = fields;
+    constructor(collection, fields, config) {
+      super(...arguments);
       this.emitter = new EventEmitter();
     }
     
