@@ -205,7 +205,7 @@ function factoryGraph(ParentClass) {
      * @param {string|LinkSelector} selector
      * @param {SelectOptions} [options]
      * @param {Graph~countCallback} [callback]
-     * @return {number} count
+     * @return {number} [count]
      */
     count(selector, options, callback) {}
     

@@ -427,7 +427,7 @@ function factoryObjectGraph(ParentClassGraph) {
      * @param {string|LinkSelector} selector
      * @param {SelectOptions} [options]
      * @param {Graph~countCallback} [callback]
-     * @return {number} count
+     * @return {number} [count]
      */
     count(selector, options, callback) {
       var links = this.fetch(selector, options);
