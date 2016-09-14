@@ -50,11 +50,17 @@ function factoryGraph(ParentClass) {
       if (this.fetch == Graph.prototype.fetch) {
         throw new Error('Method `fetch` is not adapted.');
       }
+      if (this.get == Graph.prototype.get) {
+        throw new Error('Method `get` is not adapted.');
+      }
       if (this.each == Graph.prototype.each) {
         throw new Error('Method `each` is not adapted.');
       }
       if (this.map == Graph.prototype.map) {
         throw new Error('Method `map` is not adapted.');
+      }
+      if (this.count == Graph.prototype.count) {
+        throw new Error('Method `count` is not adapted.');
       }
       if (this.on == Graph.prototype.on) {
         throw new Error('Method `on` is not adapted.');
