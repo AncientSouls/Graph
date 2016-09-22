@@ -24,7 +24,7 @@ function factoryGraph(ParentClass) {
      * @throws {Error} if the adapter methods is not complete
      * 
      * @param {} collection - A pointer to the collection dannymineobhodimye daapteru to work with the graph. This may be a connection to the SQL database and table name, for example, or a collection of Mongo. 
-     * @param {Object} fields - Comparison of the data in the collection of data in the graph. It is necessary for the adapter.
+     * @param {Object.<string, string>} fields - Comparison of the data in the collection of data in the graph. It is necessary for the adapter.
      * @param {Object} [config] - Additional config.
      */
     constructor(collection, fields, config) {

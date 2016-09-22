@@ -22,6 +22,7 @@ function factoryObjectGraph(ParentClassGraph) {
      * Construct new graph and checks for required adaptation methods.
      * @param {Array[]} collection
      * @param {Object.<string, string>} fields - matching of fields in the link with fields in document
+     * @param {Object} [config] - Additional config.
      * @throws {Error} if the adapter methods is not complete
      */
     constructor(collection, fields, config) {

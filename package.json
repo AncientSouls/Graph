@@ -33,7 +33,8 @@
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "fbemitter": "2.0.2",
-    "lodash": "^4.15.0"
+    "lodash": "^4.15.0",
+    "ancient-refs": "^0.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
