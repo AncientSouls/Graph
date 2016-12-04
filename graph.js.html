@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#count">count</a></li><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#_idGenerator">_idGenerator</a></li><li data-type='method'><a href="ObjectGraph.html#_insertModifier">_insertModifier</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifier">_updateModifier</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierAdd">_updateModifierAdd</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierPush">_updateModifierPush</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierRemove">_updateModifierRemove</a></li><li data-type='method'><a href="ObjectGraph.html#count">count</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkArrayModifier.html">LinkArrayModifier</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul><h3>Global</h3><ul><li><a href="global.html#factoryGraph">factoryGraph</a></li><li><a href="global.html#factoryObjectGraph">factoryObjectGraph</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Graph.html">Graph</a><ul class='methods'><li data-type='method'><a href="Graph.html#count">count</a></li><li data-type='method'><a href="Graph.html#each">each</a></li><li data-type='method'><a href="Graph.html#fetch">fetch</a></li><li data-type='method'><a href="Graph.html#get">get</a></li><li data-type='method'><a href="Graph.html#insert">insert</a></li><li data-type='method'><a href="Graph.html#map">map</a></li><li data-type='method'><a href="Graph.html#on">on</a></li><li data-type='method'><a href="Graph.html#options">options</a></li><li data-type='method'><a href="Graph.html#query">query</a></li><li data-type='method'><a href="Graph.html#remove">remove</a></li><li data-type='method'><a href="Graph.html#update">update</a></li></ul></li><li><a href="ObjectGraph.html">ObjectGraph</a><ul class='methods'><li data-type='method'><a href="ObjectGraph.html#_fetch">_fetch</a></li><li data-type='method'><a href="ObjectGraph.html#_generateLink">_generateLink</a></li><li data-type='method'><a href="ObjectGraph.html#_idGenerator">_idGenerator</a></li><li data-type='method'><a href="ObjectGraph.html#_insertModifier">_insertModifier</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifier">_updateModifier</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierAdd">_updateModifierAdd</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierPush">_updateModifierPush</a></li><li data-type='method'><a href="ObjectGraph.html#_updateModifierRemove">_updateModifierRemove</a></li><li data-type='method'><a href="ObjectGraph.html#count">count</a></li><li data-type='method'><a href="ObjectGraph.html#each">each</a></li><li data-type='method'><a href="ObjectGraph.html#fetch">fetch</a></li><li data-type='method'><a href="ObjectGraph.html#get">get</a></li><li data-type='method'><a href="ObjectGraph.html#insert">insert</a></li><li data-type='method'><a href="ObjectGraph.html#map">map</a></li><li data-type='method'><a href="ObjectGraph.html#on">on</a></li><li data-type='method'><a href="ObjectGraph.html#options">options</a></li><li data-type='method'><a href="ObjectGraph.html#query">query</a></li><li data-type='method'><a href="ObjectGraph.html#remove">remove</a></li><li data-type='method'><a href="ObjectGraph.html#update">update</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="Link.html">Link</a></li><li><a href="LinkArrayModifier.html">LinkArrayModifier</a></li><li><a href="LinkModifier.html">LinkModifier</a></li><li><a href="LinkSelector.html">LinkSelector</a></li><li><a href="SelectOptions.html">SelectOptions</a></li></ul><h3>Global</h3><ul><li><a href="global.html#factoryGraph">factoryGraph</a></li><li><a href="global.html#factoryObjectGraph">factoryObjectGraph</a></li></ul>
 </nav>
 
 <div id="main">
@@ -62,9 +62,23 @@ function factoryGraph(ParentClass) {
     /**
      * Construct new graph and checks for required adaptation methods.
      * @throws {Error} if the adapter methods is not complete
+     * 
+     * @param {} collection - A pointer to the collection dannymineobhodimye daapteru to work with the graph. This may be a connection to the SQL database and table name, for example, or a collection of Mongo. 
+     * @param {Object.&lt;string, string>} fields - Comparison of the data in the collection of data in the graph. It is necessary for the adapter.
+     * @param {Object} [config] - Additional config.
+     * @param {Object} [config.aliases]
+     * @param {String} [config.aliases.$]
      */
-    constructor() {
+    constructor(collection, fields, config) {
       super(...arguments);
+      this.collection = collection;
+      this.fields = fields;
+      if (typeof(config) != 'object') var config = {};
+      this.config = config;
+      if (typeof(config.aliases) != 'object') config.aliases = {};
+      for (var f in fields) {
+        if (!config.aliases[f]) config.aliases[f] = f;
+      } 
       if (this.insert == Graph.prototype.insert) {
         throw new Error('Method `insert` is not adapted.');
       }
@@ -83,11 +97,17 @@ function factoryGraph(ParentClass) {
       if (this.fetch == Graph.prototype.fetch) {
         throw new Error('Method `fetch` is not adapted.');
       }
+      if (this.get == Graph.prototype.get) {
+        throw new Error('Method `get` is not adapted.');
+      }
       if (this.each == Graph.prototype.each) {
         throw new Error('Method `each` is not adapted.');
       }
       if (this.map == Graph.prototype.map) {
         throw new Error('Method `map` is not adapted.');
+      }
+      if (this.count == Graph.prototype.count) {
+        throw new Error('Method `count` is not adapted.');
       }
       if (this.on == Graph.prototype.on) {
         throw new Error('Method `on` is not adapted.');
@@ -185,6 +205,24 @@ function factoryGraph(ParentClass) {
      */
     
     /**
+     * Get one first matching link.
+     * 
+     * @param {string|LinkSelector} selector
+     * @param {SelectOptions} [options]
+     * @param {Graph~getCallback} [callback]
+     * @return {Link} link - result link object
+     */
+    get(selector, options, callback) {}
+    
+    /**
+     * Optional callback. If present, called with an error object as the first argument and, if no error, the result link object.
+     *
+     * @callback Graph~getCallback
+     * @param {Error} [error]
+     * @param {Link} [link]
+     */
+    
+    /**
      * Should call callback once for each matching document, sequentially and synchronously.
      * 
      * @param {string|LinkSelector} selector
@@ -220,7 +258,7 @@ function factoryGraph(ParentClass) {
      * @param {string|LinkSelector} selector
      * @param {SelectOptions} [options]
      * @param {Graph~countCallback} [callback]
-     * @return {number} count
+     * @return {number} [count]
      */
     count(selector, options, callback) {}
     
@@ -263,7 +301,7 @@ export { factoryGraph, Graph };</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Sep 09 2016 13:35:17 GMT+0000 (UTC) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Dec 04 2016 17:28:50 GMT+0000 (UTC) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
