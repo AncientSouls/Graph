@@ -38,7 +38,11 @@ function factoryGraph(ParentClass) {
       if (typeof(config.aliases) != 'object') config.aliases = {};
       for (var f in fields) {
         if (!config.aliases[f]) config.aliases[f] = f;
-      } 
+      }
+      this.config._aliases = {};
+      for (var a in this.config.aliases) {
+        this.config._aliases[this.config.aliases[a]] = a;
+      }
       if (this.insert == Graph.prototype.insert) {
         throw new Error('Method `insert` is not adapted.');
       }
