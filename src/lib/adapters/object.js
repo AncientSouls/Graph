@@ -23,6 +23,8 @@ function factoryObjectGraph(ParentClassGraph) {
      * @param {Array[]} collection
      * @param {Object.<string, string>} fields - matching of fields in the link with fields in document
      * @param {Object} [config] - Additional config.
+     * @param {Object} [config.aliases]
+     * @param {String} [config.aliases.$]
      * @throws {Error} if the adapter methods is not complete
      */
     constructor(collection, fields, config) {
@@ -52,7 +54,7 @@ function factoryObjectGraph(ParentClassGraph) {
       var _modifier = {};
       for (var f in link) {
         if (this.fields[f]) {
-          _modifier[this.fields[f]] = link[f];
+          _modifier[this.fields[f]] = link[this.config.aliases[f]];
         }
       }
       return _modifier;
@@ -73,8 +75,8 @@ function factoryObjectGraph(ParentClassGraph) {
       var index, error, id;
       try {
         index = this.collection.push(_modifier) - 1;
-        if (!this.collection[index].hasOwnProperty(this.fields['id'])) {
-          id = this.collection[index][this.fields['id']] = this._idGenerator(index, this.collection[index]);
+        if (!this.collection[index].hasOwnProperty(this.fields[this.config.aliases['id']])) {
+          id = this.collection[index][this.fields[this.config.aliases['id']]] = this._idGenerator(index, this.collection[index]);
         }
         this.emitter.emit('insert', this.collection[index]);
       } catch(_error) {
@@ -249,7 +251,7 @@ function factoryObjectGraph(ParentClassGraph) {
     query(selector) {
       var type = typeof(selector);
       if (type == 'string' || type == 'number') {
-        return (doc) => { return doc[this.fields['id']] == selector };
+        return (doc) => { return doc[this.fields[this.config.aliases['id']]] == selector };
       } else if (type == 'object') {
         return (doc) => {
           if (typeof(doc) != 'object') return false;

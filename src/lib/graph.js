@@ -26,12 +26,19 @@ function factoryGraph(ParentClass) {
      * @param {} collection - A pointer to the collection dannymineobhodimye daapteru to work with the graph. This may be a connection to the SQL database and table name, for example, or a collection of Mongo. 
      * @param {Object.<string, string>} fields - Comparison of the data in the collection of data in the graph. It is necessary for the adapter.
      * @param {Object} [config] - Additional config.
+     * @param {Object} [config.aliases]
+     * @param {String} [config.aliases.$]
      */
     constructor(collection, fields, config) {
       super(...arguments);
       this.collection = collection;
       this.fields = fields;
+      if (typeof(config) != 'object') var config = {};
       this.config = config;
+      if (typeof(config.aliases) != 'object') config.aliases = {};
+      for (var f in fields) {
+        if (!config.aliases[f]) config.aliases[f] = f;
+      } 
       if (this.insert == Graph.prototype.insert) {
         throw new Error('Method `insert` is not adapted.');
       }
