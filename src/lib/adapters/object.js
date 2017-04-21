@@ -447,41 +447,57 @@ function factoryObjectGraph(ParentClassGraph) {
     /**
      * Should subscribe to the events: link, unlink, insert, update, remove.
      * 
-     * @param {string} event - name
+     * @param {string} event - One event name
      * @param {Graph~onCallback} callback
+     * @returns {Function} Stops event subscription.
+     * @example
+     * var counter = 0;
+     * var stop = graph.on('update', (oldData, newData) => {
+     *   if (oldData.id == '1') console.log(oldData.id, 'is changed');
+     *   counter++;
+     *   if (counter == 3) stop();
+     * });
      */
     on(event, callback) {
+      var subscriptions = [];
+      
       if (event == 'insert') {
-        this.emitter.addListener('insert', (document) => {
+        subscriptions.push(this.emitter.addListener('insert', (document) => {
           callback(undefined, this._generateLink(document));
-        });
+        }));
       }
       if (event == 'update') {
-        this.emitter.addListener('update', (newDocument, oldDocument) => {
+        subscriptions.push(this.emitter.addListener('update', (newDocument, oldDocument) => {
           callback(this._generateLink(oldDocument), this._generateLink(newDocument));
-        });
+        }));
       }
       if (event == 'remove') {
-        this.emitter.addListener('remove', (document) => {
+        subscriptions.push(this.emitter.addListener('remove', (document) => {
           callback(this._generateLink(document), undefined);
-        });
+        }));
       }
       if (event == 'link') {
-        this.emitter.addListener('insert', (document) => {
+        subscriptions.push(this.emitter.addListener('insert', (document) => {
           callback(undefined, this._generateLink(document));
-        });
-        this.emitter.addListener('update', (newDocument, oldDocument) => {
+        }));
+        subscriptions.push(this.emitter.addListener('update', (newDocument, oldDocument) => {
           callback(this._generateLink(oldDocument), this._generateLink(newDocument));
-        });
+        }));
       }
       if (event == 'unlink') {
-        this.emitter.addListener('update', (newDocument, oldDocument) => {
+        subscriptions.push(this.emitter.addListener('update', (newDocument, oldDocument) => {
           callback(this._generateLink(oldDocument), this._generateLink(newDocument));
-        });
-        this.emitter.addListener('remove', (document) => {
+        }));
+        subscriptions.push(this.emitter.addListener('remove', (document) => {
           callback(this._generateLink(document), undefined);
-        });
+        }));
       }
+      
+      return () => {
+        for (var subscription of subscriptions) {
+          subscription.remove();
+        }
+      };
     }
     
     /**
